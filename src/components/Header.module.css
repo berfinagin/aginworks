@@ -1,0 +1,91 @@
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+.inner {
+  background-color: var(--color-off-white);
+  border-bottom: 1px solid transparent;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--container-pad);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  pointer-events: auto;
+  transition: border-color var(--dur-med) var(--ease-j),
+              background-color var(--dur-med) var(--ease-j);
+}
+.innerScrolled {
+  border-bottom-color: var(--color-border);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+}
+.logoIcon {
+  width: 17px; height: 19px;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+}
+.logoIcon span {
+  display: block;
+  background: var(--color-black);
+}
+.logoIcon span:nth-child(4) { display: none; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  list-style: none;
+}
+.nav a {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.85;
+  transition: opacity var(--dur-fast) var(--ease-std);
+}
+.nav a:hover { opacity: 1; }
+.navArrow { font-size: 9px; opacity: 0.5; }
+.navLinkActive {
+  opacity: 1 !important;
+  border-bottom: 1.5px solid var(--color-black);
+  padding-bottom: 2px;
+}
+
+.langToggle {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  text-transform: uppercase;
+  background: none;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--btn-radius);
+  padding: 3px 10px;
+  cursor: pointer;
+  color: var(--color-black);
+  opacity: 0.7;
+  transition: opacity var(--dur-fast) var(--ease-std),
+              background var(--dur-fast) var(--ease-std);
+}
+.langToggle:hover {
+  opacity: 1;
+  background: var(--color-black);
+  color: var(--color-off-white);
+}
+
+@media (max-width: 640px) {
+  .nav { display: none; }
+}

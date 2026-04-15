@@ -1,0 +1,65 @@
+.strip {
+  margin-top: 120px;
+}
+.text {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 40px 80px 0;
+}
+.text h2 {
+  font-family: var(--font-body);
+  font-size: var(--text-h2-sm);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 24px;
+}
+.text p {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  opacity: 0.65;
+  margin-top: 24px;
+  max-width: 400px;
+}
+.image {
+  grid-column: span 6;
+  overflow: hidden;
+  min-height: 500px;
+}
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding: var(--btn-pad);
+  padding-right: 10px;
+  border: 0.5px solid var(--color-black);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-btn);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-black);
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.btnOutline:hover { background: var(--color-black); color: var(--color-off-white); }
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--color-black);
+  color: var(--color-off-white);
+  font-size: 11px;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.btnOutline:hover .arrow { background: var(--color-off-white); color: var(--color-black); }
+
+@media (max-width: 960px) {
+  .text, .image { grid-column: 1 / -1; }
+  .text { padding: 48px 0 24px; }
+  .image { min-height: 300px; }
+}

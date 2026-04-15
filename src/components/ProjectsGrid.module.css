@@ -1,0 +1,92 @@
+.section {
+  margin-top: 200px;
+}
+.headlineWrap {
+  grid-column: span 10;
+}
+.headline {
+  font-family: var(--font-body);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-top: 64px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--grid-gap);
+  row-gap: 64px;
+  margin-top: 64px;
+}
+.card {
+  grid-column: span 3;
+  cursor: pointer;
+}
+.cardImage {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+}
+.cardImage img {
+  transition: transform var(--dur-slow) var(--ease-j);
+}
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+.cardType {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+.cardName {
+  font-family: var(--font-body);
+  font-size: var(--text-h6);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-std);
+}
+.card:hover .cardName { border-color: var(--color-black); }
+.icon { font-size: 12px; opacity: 0.5; }
+
+.cardCta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 24px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  aspect-ratio: 9 / 16;
+}
+.cardCta p {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.bigArrow {
+  margin-top: 20px;
+  font-size: 48px;
+  line-height: 1;
+  opacity: 0.5;
+  transition: opacity var(--dur-fast), transform var(--dur-fast) var(--ease-j);
+  display: block;
+}
+.cardCta:hover .bigArrow { opacity: 1; transform: translate(4px, -4px); }
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .card { grid-column: span 1; }
+}

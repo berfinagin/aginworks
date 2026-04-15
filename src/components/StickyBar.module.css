@@ -1,0 +1,25 @@
+.bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px var(--container-pad);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  pointer-events: none;
+}
+.bar a {
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: auto;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.bar a:hover { opacity: 1; }
+.bar a::after { content: '↗'; font-size: 11px; }
