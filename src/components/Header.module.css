@@ -22,25 +22,12 @@
   border-bottom-color: var(--color-border);
 }
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: var(--text-body);
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-.logoIcon {
-  width: 17px; height: 19px;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2px;
-}
-.logoIcon span {
-  display: block;
-  background: var(--color-black);
-}
-.logoIcon span:nth-child(4) { display: none; }
 
 .nav {
   display: flex;

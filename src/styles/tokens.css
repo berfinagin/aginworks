@@ -3,7 +3,7 @@
 ───────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-off-white:    rgb(230, 231, 232);
+  --color-off-white:    #e6e7e8;
   --color-black:        rgb(14, 14, 14);
   --color-stone:        rgb(104, 101, 99);
   --color-border:       rgba(30, 30, 30, 0.20);
@@ -15,18 +15,18 @@
   --font-mono: 'Space Mono', monospace;
 
   /* Typography scale */
-  --text-micro:    11px;
-  --text-caps:     12px;
-  --text-nav:      13px;
-  --text-btn:      14px;
-  --text-body:     16px;
-  --text-h6:       16px;
-  --text-h5:       20px;
-  --text-h4:       24px;
-  --text-h3:       32px;
-  --text-h2-sm:    48px;
-  --text-h2:       64px;
-  --text-display:  140px;
+  --text-micro:    15px;
+  --text-caps:     16px;
+  --text-nav:      17px;
+  --text-btn:      18px;
+  --text-body:     22px;
+  --text-h6:       22px;
+  --text-h5:       28px;
+  --text-h4:       36px;
+  --text-h3:       48px;
+  --text-h2-sm:    64px;
+  --text-h2:       88px;
+  --text-display:  180px;
 
   /* Grid */
   --grid-gap:      21.3px;

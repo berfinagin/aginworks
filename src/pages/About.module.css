@@ -1,0 +1,212 @@
+.page {
+  padding-top: 80px;
+}
+
+/* ── Hero ── */
+.pageHero {
+  padding-top: 80px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--color-border);
+}
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(64px, 10vw, 160px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+.divider {
+  display: none;
+}
+
+/* ── Studio Intro ── */
+.intro {
+  margin-top: 120px;
+}
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--grid-gap);
+  align-items: start;
+}
+.introImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.introImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-j);
+}
+.introImage:hover img {
+  transform: scale(1.03);
+}
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 8px;
+  position: sticky;
+  top: 120px;
+}
+.introHeading {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.introBody {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  opacity: 0.65;
+  max-width: 480px;
+}
+
+/* ── Founder ── */
+.founder {
+  margin-top: 160px;
+  padding-top: 64px;
+  border-top: 1px solid var(--color-border);
+}
+.founderGrid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: var(--grid-gap);
+  align-items: start;
+}
+.founderMeta {
+  padding-top: 4px;
+}
+.founderContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--grid-gap);
+  align-items: start;
+}
+.founderImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.founderImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.founderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+.founderName {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.founderRole {
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+.founderBio {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  opacity: 0.65;
+  margin-top: 12px;
+  max-width: 420px;
+}
+
+/* ── Approach ── */
+.approach {
+  margin-top: 160px;
+  padding-top: 64px;
+  border-top: 1px solid var(--color-border);
+}
+.approachHeader {
+  margin-bottom: 48px;
+}
+.approachList {
+  display: flex;
+  flex-direction: column;
+}
+.approachRow {
+  display: grid;
+  grid-template-columns: 64px 1fr 2fr;
+  column-gap: var(--grid-gap);
+  align-items: start;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.approachNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  opacity: 0.35;
+  padding-top: 6px;
+}
+.approachTitle {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.approachBody {
+  font-size: var(--text-body);
+  line-height: 1.8;
+  opacity: 0.65;
+}
+
+/* ── Services ── */
+.services {
+  margin-top: 160px;
+  padding-top: 64px;
+  border-top: 1px solid var(--color-border);
+  padding-bottom: 160px;
+}
+.servicesList {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.serviceNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  opacity: 0.35;
+  min-width: 32px;
+}
+.serviceName {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .introGrid { grid-template-columns: 1fr; gap: 48px; }
+  .introText { position: static; }
+  .founderGrid { grid-template-columns: 1fr; gap: 32px; }
+  .founderContent { grid-template-columns: 1fr; gap: 32px; }
+  .founderImage { max-width: 400px; }
+  .approachRow { grid-template-columns: 48px 1fr; }
+  .approachBody { grid-column: 2; margin-top: 8px; }
+}
+@media (max-width: 640px) {
+  .approachRow { grid-template-columns: 1fr; gap: 12px; }
+  .serviceItem { gap: 16px; }
+}

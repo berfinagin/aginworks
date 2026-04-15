@@ -17,10 +17,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`${styles.inner} ${scrolled ? styles.innerScrolled : ''}`}>
         <NavLink to="/" className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <span /><span /><span />
-          </div>
-          Aginworks
+          AGIN WORKS
         </NavLink>
         <nav>
           <ul className={styles.nav}>
@@ -33,10 +30,20 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/#about">{t.nav.about}</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => isActive ? styles.navLinkActive : undefined}
+              >
+                {t.nav.about}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/#contact">{t.nav.contact}</NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => isActive ? styles.navLinkActive : undefined}
+              >
+                {t.nav.contact}
+              </NavLink>
             </li>
             <li>
               <button className={styles.langToggle} onClick={toggle}>

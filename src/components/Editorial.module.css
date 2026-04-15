@@ -1,5 +1,5 @@
 .section {
-  margin-top: 120px;
+  margin-top: 280px;
 }
 
 /* ── Header: display text left, body right ── */
@@ -8,7 +8,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: var(--grid-gap);
   align-items: end;
-  padding-bottom: 80px;
+  padding-bottom: 160px;
   border-bottom: 1px solid var(--color-border);
 }
 .displayWrap {
@@ -18,7 +18,7 @@
 }
 .display {
   font-family: var(--font-body);
-  font-size: var(--text-display);
+  font-size: clamp(56px, 9vw, 130px);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
