@@ -217,18 +217,41 @@
   .founder { margin-top: 56px; padding-top: 40px; }
   .approach { margin-top: 56px; padding-top: 40px; }
   .services { margin-top: 56px; padding-top: 40px; padding-bottom: 56px; }
+
+  /* Intro: text first, image below as a short landscape strip */
+  .introGrid { display: flex; flex-direction: column; gap: 32px; }
+  .introText { order: 1; }
+  .introImage { order: 2; aspect-ratio: 16 / 9; }
+  .introHeading { font-size: 24px; }
   .introBody { font-size: 15px; line-height: 1.7; }
-  .founderBio { font-size: 15px; }
+
+  /* Team: horizontal row per member — small avatar + text */
+  .teamList { grid-template-columns: 1fr; gap: 0; }
+  .teamMember {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .founderImage {
+    width: 64px;
+    height: 64px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+  .founderInfo { gap: 4px; padding-top: 0; }
+  .founderName { font-size: 16px; letter-spacing: -0.01em; }
+  .founderRole { font-size: 11px; margin-top: 0; }
+  .founderBio { display: none; }
+
+  /* Approach */
   .approachRow { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
   .approachBody { grid-column: 1; margin-top: 0; font-size: 15px; }
   .approachNum { padding-top: 0; }
+
+  /* Services */
   .serviceItem { gap: 16px; padding: 20px 0; }
   .servicesList { margin-top: 32px; }
-  /* Team: 2-col grid, square images */
-  .teamList { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .founderImage { aspect-ratio: 1 / 1; max-width: 100%; }
-  .founderName { font-size: 16px; }
-  .founderRole { font-size: 11px; }
-  .founderBio { display: none; }
-  .teamMember { gap: 12px; }
 }
