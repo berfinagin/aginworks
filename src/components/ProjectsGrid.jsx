@@ -1,17 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
+import { allProjects } from '../data/projects'
 import styles from './ProjectsGrid.module.css'
 
-const projects = [
-  { id: 1, typeKey: 'residential', name: 'Villa Solaris',       image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80' },
-  { id: 2, typeKey: 'cultural',    name: 'Pavilion Zero',        image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80' },
-  { id: 3, typeKey: 'commercial',  name: 'The Concrete Frame',   image: 'https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=600&q=80' },
-  { id: 4, typeKey: 'urban',       name: 'Courtyard House',      image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80' },
-  { id: 5, typeKey: 'landscape',   name: 'Stone Garden',         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
-  { id: 6, typeKey: 'institutional',name: 'Archive Building',    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80' },
-  { id: 7, typeKey: 'residential', name: 'Tower Residence',      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80' },
-]
+// Show first 7 projects from the data file
+const projects = allProjects.slice(0, 7)
 
 export default function ProjectsGrid() {
+  const navigate = useNavigate()
   const { t } = useLang()
   const p = t.projects
 
@@ -32,7 +28,11 @@ export default function ProjectsGrid() {
 
       <div className={styles.grid}>
         {projects.map(proj => (
-          <div className={styles.card} key={proj.id}>
+          <div
+            className={styles.card}
+            key={proj.slug}
+            onClick={() => navigate(`/projects/${proj.slug}`)}
+          >
             <div className={styles.cardImage}>
               <img src={proj.image} alt={proj.name} />
             </div>
@@ -43,7 +43,11 @@ export default function ProjectsGrid() {
           </div>
         ))}
 
-        <div className={`${styles.card} ${styles.cardCta}`}>
+        <div
+          className={`${styles.card} ${styles.cardCta}`}
+          onClick={() => navigate('/projects')}
+          style={{ cursor: 'pointer' }}
+        >
           <p>{p.cta}</p>
           <span className={styles.bigArrow}>↗</span>
         </div>

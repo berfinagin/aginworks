@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import styles from './AboutStrip.module.css'
 
@@ -11,10 +12,10 @@ export default function AboutStrip() {
         <span className="section-label">{a.label}</span>
         <h2>{a.heading}</h2>
         <p>{a.body}</p>
-        <a href="#contact" className={styles.btnOutline}>
+        <Link to="/contact" className={styles.btnOutline}>
           {a.cta}
           <span className={styles.arrow}>↗</span>
-        </a>
+        </Link>
       </div>
       <div className={styles.image}>
         <img

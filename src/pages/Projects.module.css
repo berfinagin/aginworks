@@ -314,6 +314,115 @@
 .searchBtn:hover { opacity: 1; }
 .searchBtn span { font-size: 16px; }
 
+/* ── Filter active state ── */
+.filterBtnActive {
+  opacity: 1;
+  background: var(--color-black);
+  color: var(--color-off-white);
+}
+.filterBtnActive:hover { opacity: 0.85; }
+
+/* ── Filter button wrapper (anchors dropdown) ── */
+.filterBtnWrap {
+  position: relative;
+}
+
+/* ── Dropdown panel ── */
+.filterDropdown {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  z-index: 45;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  min-width: 160px;
+}
+.dropdownOption {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--color-black);
+  opacity: 0.65;
+  transition: opacity 0.2s, background 0.2s;
+}
+.dropdownOption:last-child { border-bottom: none; }
+.dropdownOption:hover { opacity: 1; background: rgba(14,14,14,0.04); }
+.dropdownOptionActive { opacity: 1; font-weight: 700; }
+
+/* ── Clear filters button ── */
+.clearBtn {
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--color-black);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.clearBtn:hover { opacity: 1; }
+
+/* ── Search bar (inline in filter-right) ── */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 14px 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  color: var(--color-black);
+  outline: none;
+  min-width: 0;
+}
+.searchInput::placeholder { opacity: 0.4; }
+.searchClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  padding: 4px 8px;
+  color: var(--color-black);
+}
+.searchClose:hover { opacity: 1; }
+
+/* ── No results ── */
+.noResults {
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid var(--color-border);
+}
+.noResults p {
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
 /* ── CASE STUDY ENTRIES ── */
 .caseEntries {
   max-width: var(--container-max);

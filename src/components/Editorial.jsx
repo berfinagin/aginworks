@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import styles from './Editorial.module.css'
 
 const ongoingProjects = [
   {
     id: '01',
+    slug: 'villa-solaris',
     name: 'Villa Solaris',
     location: 'Ankara',
     typeKey: 'residential',
@@ -12,6 +15,7 @@ const ongoingProjects = [
   },
   {
     id: '02',
+    slug: 'pavilion-zero',
     name: 'Pavilion Zero',
     location: 'İstanbul',
     typeKey: 'cultural',
@@ -20,6 +24,7 @@ const ongoingProjects = [
   },
   {
     id: '03',
+    slug: 'the-concrete-frame',
     name: 'The Concrete Frame',
     location: 'İzmir',
     typeKey: 'commercial',
@@ -28,6 +33,7 @@ const ongoingProjects = [
   },
   {
     id: '04',
+    slug: 'courtyard-house',
     name: 'Courtyard House',
     location: 'Ankara',
     typeKey: 'residential',
@@ -37,6 +43,7 @@ const ongoingProjects = [
 ]
 
 export default function Editorial() {
+  const navigate = useNavigate()
   const { t } = useLang()
   const e = t.editorial
   const types = t.projects.types
@@ -53,8 +60,8 @@ export default function Editorial() {
         <div className={styles.headerRight}>
           <p className={styles.body}>{e.body}</p>
           <div className={styles.actions}>
-            <a href="#contact" className="link-arrow">{e.cta1}</a>
-            <a href="#projects" className="link-arrow">{e.cta2}</a>
+            <Link to="/contact" className="link-arrow">{e.cta1}</Link>
+            <Link to="/projects" className="link-arrow">{e.cta2}</Link>
           </div>
         </div>
       </div>
@@ -62,7 +69,12 @@ export default function Editorial() {
       {/* Project rows */}
       <div className={styles.list}>
         {ongoingProjects.map((proj) => (
-          <div className={styles.row} key={proj.id}>
+          <div
+            className={styles.row}
+            key={proj.id}
+            onClick={() => navigate(`/projects/${proj.slug}`)}
+            style={{ cursor: 'pointer' }}
+          >
             <span className={styles.rowNum}>{proj.id}</span>
             <span className={styles.rowName}>{proj.name}</span>
             <span className={styles.rowType}>{types[proj.typeKey]}</span>

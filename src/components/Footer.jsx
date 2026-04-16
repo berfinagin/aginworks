@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import styles from './Footer.module.css'
 
@@ -13,9 +14,9 @@ export default function Footer() {
           <div className={styles.col}>
             <h4>{f.studio}</h4>
             <ul>
-              <li><a href="#about">{f.links.about}</a></li>
-              <li><a href="#projects">{f.links.projects}</a></li>
-              <li><a href="#contact">{f.links.contact}</a></li>
+              <li><Link to="/about">{f.links.about}</Link></li>
+              <li><Link to="/projects">{f.links.projects}</Link></li>
+              <li><Link to="/contact">{f.links.contact}</Link></li>
             </ul>
           </div>
           <div className={styles.col}>
