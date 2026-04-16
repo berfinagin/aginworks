@@ -130,6 +130,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   :root {
     --text-display: 52px;
     --text-h2:      28px;
-    --container-pad: 16px;
+    --text-h2-sm:   28px;
+    --text-h3:      36px;
+    --container-pad: 20px;
   }
 }

@@ -46,3 +46,10 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+@media (max-width: 640px) {
+  .strip { margin-top: 64px; }
+  .header { flex-direction: column; gap: 12px; }
+  .desc { text-align: left; max-width: 100%; }
+  .item { font-size: var(--text-h5); }
+}

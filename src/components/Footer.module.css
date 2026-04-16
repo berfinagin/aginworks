@@ -56,3 +56,10 @@
   .tagline { grid-column: 1 / -1; }
   .col { grid-column: span 1; }
 }
+@media (max-width: 640px) {
+  .footer { margin-top: 64px; padding: 48px 0 24px; }
+  .top { grid-template-columns: 1fr; gap: 24px; }
+  .tagline { grid-column: 1 / -1; font-size: var(--text-body); }
+  .col { grid-column: 1 / -1; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

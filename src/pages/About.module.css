@@ -207,6 +207,13 @@
   .approachBody { grid-column: 2; margin-top: 8px; }
 }
 @media (max-width: 640px) {
-  .approachRow { grid-template-columns: 1fr; gap: 12px; }
-  .serviceItem { gap: 16px; }
+  .intro { margin-top: 64px; }
+  .founder { margin-top: 80px; }
+  .approach { margin-top: 80px; }
+  .services { margin-top: 80px; padding-bottom: 80px; }
+  .approachRow { grid-template-columns: 1fr; gap: 8px; padding: 28px 0; }
+  .approachBody { grid-column: 1; margin-top: 0; }
+  .approachNum { padding-top: 0; }
+  .serviceItem { gap: 16px; padding: 24px 0; }
+  .founderImage { max-width: 100%; }
 }

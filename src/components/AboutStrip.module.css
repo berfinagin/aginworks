@@ -63,3 +63,7 @@
   .text { padding: 48px 0 24px; }
   .image { min-height: 300px; }
 }
+@media (max-width: 640px) {
+  .strip { margin-top: 64px; }
+  .image { min-height: 240px; }
+}

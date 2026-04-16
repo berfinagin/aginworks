@@ -90,3 +90,15 @@
   .grid { grid-template-columns: repeat(2, 1fr); }
   .card { grid-column: span 1; }
 }
+@media (max-width: 640px) {
+  .section { margin-top: 80px; }
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+    margin-top: 40px;
+  }
+  .card { grid-column: span 1; }
+  .cardImage { aspect-ratio: 4 / 3; }
+  .cardCta { aspect-ratio: 4 / 3; }
+  .headline { margin-top: 12px; }
+}

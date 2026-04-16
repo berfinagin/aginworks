@@ -105,6 +105,29 @@
   .right { height: 55vw; margin-top: 0; }
 }
 @media (max-width: 640px) {
-  .left { grid-column: 1 / -1; }
-  .right { grid-column: 1 / -1; }
+  .hero {
+    padding-top: 32px;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .left {
+    grid-column: 1 / -1;
+    padding-top: 24px;
+  }
+  .right {
+    grid-column: 1 / -1;
+    height: 64vw;
+  }
+  .tagline {
+    font-size: var(--text-h6);
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  .meta {
+    padding-top: 24px;
+    gap: 16px;
+  }
+  .imageWrap {
+    min-height: 200px;
+  }
 }

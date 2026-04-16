@@ -73,6 +73,91 @@
   color: var(--color-off-white);
 }
 
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  pointer-events: auto;
+}
+.hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transition: opacity var(--dur-fast) var(--ease-std);
+}
+.hamburgerLineHide {
+  opacity: 0;
+}
+
+/* ── Mobile menu ── */
+.mobileMenu {
+  display: none;
+  background: var(--color-off-white);
+  border-bottom: 1px solid var(--color-border);
+  pointer-events: auto;
+  padding: 8px var(--container-pad) 32px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-med) var(--ease-j);
+}
+.mobileMenuOpen {
+  max-height: 480px;
+}
+.mobileNav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobileNav li a {
+  display: block;
+  padding: 20px 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-h5);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-border-light);
+  opacity: 0.75;
+  transition: opacity var(--dur-fast) var(--ease-std);
+}
+.mobileNav li a:hover,
+.mobileNav li a:active { opacity: 1; }
+.mobileNavActive { opacity: 1 !important; }
+.mobileNavLangRow {
+  padding-top: 20px;
+}
+.mobileLangToggle {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  text-transform: uppercase;
+  background: none;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--btn-radius);
+  padding: 3px 14px;
+  cursor: pointer;
+  color: var(--color-black);
+  opacity: 0.7;
+  transition: opacity var(--dur-fast) var(--ease-std),
+              background var(--dur-fast) var(--ease-std);
+}
+.mobileLangToggle:hover {
+  opacity: 1;
+  background: var(--color-black);
+  color: var(--color-off-white);
+}
+
 @media (max-width: 640px) {
   .nav { display: none; }
+  .hamburger { display: flex; }
+  .mobileMenu { display: block; }
 }

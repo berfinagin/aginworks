@@ -442,6 +442,30 @@
   .thumbGrid    { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
+  .pageHero { padding-top: 100px; }
+  .titleDivider { margin-top: 40px; }
+  .controlRow { grid-column: 1 / -1; padding-top: 40px; padding-bottom: 16px; }
+  .featuredTitle { font-size: var(--text-h4); }
+  .counterCol { padding-bottom: 32px; padding-top: 16px; }
+  .counterCurrent,
+  .counterSep,
+  .counterTotal { font-size: clamp(40px, 10vw, 64px); }
+  /* Filter bar: horizontal scroll on small screens */
+  .filterBar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    padding: 0 var(--container-pad);
+  }
+  .filterBar::-webkit-scrollbar { display: none; }
+  .filterLeft { flex-shrink: 0; }
+  .filterCenter { display: none; }
+  .filterRight { flex-shrink: 0; }
+  .caseEntry { padding: 40px 0; }
   .caseImages { height: 52vw; }
+  .caseTitle { font-size: var(--text-h4); }
   .thumbGrid  { grid-template-columns: 1fr; }
+  .thumbTitle { font-size: var(--text-body); }
+  .page { padding-bottom: 64px; }
 }

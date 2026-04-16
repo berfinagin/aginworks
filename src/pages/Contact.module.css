@@ -134,3 +134,9 @@
   .bodyGrid { grid-template-columns: 1fr; gap: 80px; }
   .info { position: static; }
 }
+@media (max-width: 640px) {
+  .body { margin-top: 64px; padding-bottom: 80px; }
+  .bodyGrid { gap: 48px; }
+  .intro { font-size: var(--text-h6); }
+  .submit { width: 100%; text-align: center; padding: 16px 24px; }
+}
