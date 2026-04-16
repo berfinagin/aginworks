@@ -56,9 +56,15 @@
   border-bottom: 1px solid var(--color-border);
   cursor: pointer;
   overflow: hidden;
-  transition: background var(--dur-fast) var(--ease-std);
+  transition: background var(--dur-fast) var(--ease-std),
+              padding-right var(--dur-fast) var(--ease-j);
 }
-.row:hover { background: rgba(14, 14, 14, 0.03); }
+.row:hover {
+  background: rgba(14, 14, 14, 0.03);
+  padding-right: 220px;
+  transition: background var(--dur-fast) var(--ease-std),
+              padding-right var(--dur-fast) var(--ease-j);
+}
 
 .rowNum {
   font-family: var(--font-mono);
@@ -73,7 +79,7 @@
   letter-spacing: -0.02em;
   transition: transform var(--dur-fast) var(--ease-j);
 }
-.row:hover .rowName { transform: translateX(8px); }
+.row:hover .rowName { transform: translateX(0); }
 
 .rowType {
   font-family: var(--font-mono);
