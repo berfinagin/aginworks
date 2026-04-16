@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
@@ -47,6 +48,7 @@ export default function Editorial() {
   const { t, toUpper } = useLang()
   const e = t.editorial
   const types = t.projects.types
+  const [activeRow, setActiveRow] = useState(null)
 
   return (
     <section className={`${styles.section} container`} id="about">
@@ -70,9 +72,12 @@ export default function Editorial() {
       <div className={styles.list}>
         {ongoingProjects.map((proj) => (
           <div
-            className={styles.row}
+            className={`${styles.row} ${activeRow === proj.id ? styles.rowActive : ''}`}
             key={proj.id}
             onClick={() => navigate(`/projects/${proj.slug}`)}
+            onTouchStart={() => setActiveRow(proj.id)}
+            onTouchEnd={() => setActiveRow(null)}
+            onTouchCancel={() => setActiveRow(null)}
             style={{ cursor: 'pointer' }}
           >
             <span className={styles.rowNum}>{proj.id}</span>
