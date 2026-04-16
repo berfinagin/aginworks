@@ -6,6 +6,7 @@
 }
 .inner {
   background-color: var(--color-off-white);
+  border-bottom: 1px solid transparent;
   height: 80px;
   display: flex;
   align-items: center;
@@ -14,21 +15,10 @@
   max-width: var(--container-max);
   margin: 0 auto;
   pointer-events: auto;
-  position: relative;
+  transition: border-color var(--dur-med) var(--ease-j);
 }
-.inner::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: var(--container-pad);
-  right: var(--container-pad);
-  height: 1px;
-  background: var(--color-border);
-  opacity: 0;
-  transition: opacity var(--dur-med) var(--ease-j);
-}
-.innerScrolled::after {
-  opacity: 1;
+.innerScrolled {
+  border-bottom-color: var(--color-border);
 }
 .logo {
   font-family: var(--font-mono);

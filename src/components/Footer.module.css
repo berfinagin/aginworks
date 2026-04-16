@@ -9,9 +9,7 @@
   grid-template-columns: repeat(12, 1fr);
   column-gap: var(--grid-gap);
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(230, 231, 232, 0.15);
-  max-width: calc(var(--container-max) - var(--container-pad) * 2);
-  margin: 0 auto;
+  border-bottom: 1px solid rgba(230, 231, 232, 0.2);
 }
 .tagline {
   font-family: var(--font-body);
