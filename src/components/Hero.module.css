@@ -4,7 +4,6 @@
   min-height: calc(100dvh - 80px);
   max-height: 709px;
   padding-bottom: 24px;
-  overflow: hidden;
 }
 .left {
   grid-column: span 6;
@@ -52,10 +51,6 @@
   margin-top: 24px;
 }
 .imageWrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
   transition: transform var(--dur-slow) var(--ease-j);
 }
 .imageWrap:hover img { transform: scale(1.04); }
@@ -65,14 +60,9 @@
   position: relative;
   overflow: hidden;
   margin-top: 0;
-  height: calc(100dvh - 152px);
-  max-height: 637px;
 }
 .right img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   transition: transform var(--dur-slow) var(--ease-j);
 }
 .right:hover img { transform: scale(1.04); }

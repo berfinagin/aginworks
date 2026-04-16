@@ -27,7 +27,7 @@ export default function Hero() {
 
         <div className={styles.imageWrap}>
           <img
-            src="/projects/antalya-villa/cover.jpg"
+            src="/projects/altintas-konut/cover.jpg"
             alt="Featured architectural project"
           />
           <Link to="/projects" className={styles.btnPill}>
