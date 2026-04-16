@@ -32,22 +32,6 @@ export const featured = [
     ],
   },
   {
-    slug: 'masadagi-antalya',
-    typeKey: 'residential',
-    name: 'Masadağı Konut, Antalya',
-    location: 'Antalya',
-    year: '2023',
-    desc: 'A large-scale residential development in Antalya, defined by its monumental stone entrance canopy and a carefully landscaped setting with tropical planting.',
-    longDesc: 'Masadağı Konut occupies a prominent site in Antalya, bringing together several apartment buildings under a cohesive architectural language. The project is anchored by a distinctive stone entrance structure — a gateway that establishes the character and quality of the whole.\n\nThe buildings are arranged to create generous spaces between them: planted courtyards, walking paths, and communal areas that give the development a sense of place rather than density.\n\nFacades combine stone cladding, horizontal banding, and recessed balconies — a composition that reads as unified from a distance while offering variety at human scale.',
-    image: '/projects/masadagi-antalya/cover.jpg',
-    images: [
-      '/projects/masadagi-antalya/01.jpg',
-      '/projects/masadagi-antalya/02.jpg',
-      '/projects/masadagi-antalya/03.jpg',
-      '/projects/masadagi-antalya/04.jpg',
-    ],
-  },
-  {
     slug: 'dosemealti-villa',
     typeKey: 'residential',
     name: 'Döşemealtı Villa, Antalya',
@@ -61,6 +45,22 @@ export const featured = [
       '/projects/dosemealti-villa/02.jpg',
       '/projects/dosemealti-villa/03.jpg',
       '/projects/dosemealti-villa/04.jpg',
+    ],
+  },
+  {
+    slug: 'masadagi-antalya',
+    typeKey: 'residential',
+    name: 'Masadağı Konut, Antalya',
+    location: 'Antalya',
+    year: '2023',
+    desc: 'A large-scale residential development in Antalya, defined by its monumental stone entrance canopy and a carefully landscaped setting with tropical planting.',
+    longDesc: 'Masadağı Konut occupies a prominent site in Antalya, bringing together several apartment buildings under a cohesive architectural language. The project is anchored by a distinctive stone entrance structure — a gateway that establishes the character and quality of the whole.\n\nThe buildings are arranged to create generous spaces between them: planted courtyards, walking paths, and communal areas that give the development a sense of place rather than density.\n\nFacades combine stone cladding, horizontal banding, and recessed balconies — a composition that reads as unified from a distance while offering variety at human scale.',
+    image: '/projects/masadagi-antalya/cover.jpg',
+    images: [
+      '/projects/masadagi-antalya/01.jpg',
+      '/projects/masadagi-antalya/02.jpg',
+      '/projects/masadagi-antalya/03.jpg',
+      '/projects/masadagi-antalya/04.jpg',
     ],
   },
 ]
@@ -104,6 +104,66 @@ export const caseStudies = [
 
 export const thumbs = [
   {
+    slug: 'altinova-antalya',
+    typeKey: 'mixed',
+    name: 'Altınova Residence, Antalya',
+    location: 'Antalya',
+    year: '2024',
+    desc: 'A premium mixed-use residence in Antalya — curved terraced facades set among pine forest, with commercial ground floor, generous green terraces, and refined material detailing.',
+    image: '/projects/altinova-antalya/cover.jpg',
+    images: [
+      '/projects/altinova-antalya/01.jpg',
+      '/projects/altinova-antalya/02.jpg',
+      '/projects/altinova-antalya/03.jpg',
+      '/projects/altinova-antalya/04.jpg',
+    ],
+  },
+  {
+    slug: 'altintas-antalya',
+    typeKey: 'residential',
+    name: 'Altıntaş Konut, Antalya',
+    location: 'Antalya',
+    year: '2023',
+    desc: 'A contemporary residential complex in Altıntaş, Antalya — multiple apartment blocks arranged around a generous shared pool, landscaped gardens, and social spaces.',
+    image: '/projects/altintas-antalya/cover.jpg',
+    images: [
+      '/projects/altintas-antalya/01.jpg',
+      '/projects/altintas-antalya/02.jpg',
+      '/projects/altintas-antalya/03.jpg',
+      '/projects/altintas-antalya/04.jpg',
+    ],
+  },
+  {
+    slug: 'dosemealti-villa',
+    typeKey: 'residential',
+    name: 'Döşemealtı Villa, Antalya',
+    location: 'Antalya',
+    year: '2022',
+    desc: 'A constructed modern villa in Döşemealtı, Antalya — crisp white cubic volumes, a private pool terrace, and floor-to-ceiling glazing that dissolves the boundary between inside and out.',
+    image: '/projects/dosemealti-villa/cover.jpg',
+    images: [
+      '/projects/dosemealti-villa/01.jpg',
+      '/projects/dosemealti-villa/02.jpg',
+      '/projects/dosemealti-villa/03.jpg',
+      '/projects/dosemealti-villa/04.jpg',
+    ],
+  },
+  {
+    slug: 'masadagi-antalya',
+    typeKey: 'residential',
+    name: 'Masadağı Konut, Antalya',
+    location: 'Antalya',
+    year: '2023',
+    desc: 'A large-scale residential development in Antalya, defined by its monumental stone entrance canopy and a carefully landscaped setting with tropical planting.',
+    image: '/projects/masadagi-antalya/cover.jpg',
+    images: [
+      '/projects/masadagi-antalya/01.jpg',
+      '/projects/masadagi-antalya/02.jpg',
+      '/projects/masadagi-antalya/03.jpg',
+      '/projects/masadagi-antalya/04.jpg',
+    ],
+  },
+  {
     slug: 'karaburun-villa',
     typeKey: 'residential',
     name: 'Karaburun Villa, İzmir',
@@ -136,4 +196,5 @@ export const thumbs = [
   },
 ]
 
-export const allProjects = [...featured, ...caseStudies, ...thumbs]
+const _all = [...featured, ...caseStudies, ...thumbs]
+export const allProjects = [...new Map(_all.map(p => [p.slug, p])).values()]
