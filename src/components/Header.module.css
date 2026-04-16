@@ -123,11 +123,12 @@
 }
 .mobileNav li a {
   display: block;
-  padding: 22px 0;
-  font-family: var(--font-body);
-  font-size: 32px;
+  padding: 20px 0;
+  font-family: var(--font-mono);
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--color-black);
   border-bottom: 1px solid var(--color-border-light);
   opacity: 0.55;

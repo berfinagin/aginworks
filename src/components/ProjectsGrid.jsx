@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import { allProjects } from '../data/projects'
+import { ArrowUpRight } from './icons'
 import styles from './ProjectsGrid.module.css'
 
 // Show first 7 projects from the data file
@@ -38,7 +39,7 @@ export default function ProjectsGrid() {
             </div>
             <p className={styles.cardType}>{toUpper(p.types[proj.typeKey])}</p>
             <p className={styles.cardName}>
-              {proj.name} <span className={styles.icon}>↗</span>
+              {proj.name} <span className={styles.icon}><ArrowUpRight size={11} /></span>
             </p>
           </div>
         ))}
@@ -49,7 +50,7 @@ export default function ProjectsGrid() {
           style={{ cursor: 'pointer' }}
         >
           <p>{p.cta}</p>
-          <span className={styles.bigArrow}>↗</span>
+          <span className={styles.bigArrow}><ArrowUpRight size={40} /></span>
         </div>
       </div>
     </section>

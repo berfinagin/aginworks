@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
+import { ArrowUpRight, ArrowRight } from './icons'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -32,7 +33,7 @@ export default function Hero() {
           />
           <Link to="/projects" className={styles.btnPill}>
             {t.hero.cta}
-            <span className={styles.arrow}>↗</span>
+            <span className={styles.arrow}><ArrowUpRight /></span>
           </Link>
         </div>
       </div>
@@ -44,7 +45,7 @@ export default function Hero() {
         />
         <Link to="/projects" className={styles.btnPill}>
           {t.hero.ctaHero}
-          <span className={styles.arrow}>→</span>
+          <span className={styles.arrow}><ArrowRight size={11} /></span>
         </Link>
       </div>
     </section>

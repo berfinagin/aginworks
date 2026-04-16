@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import { allProjects } from '../data/projects'
+import { ArrowLeft, ArrowRight } from '../components/icons'
 import styles from './ProjectDetail.module.css'
 
 export default function ProjectDetail() {
@@ -106,13 +107,13 @@ export default function ProjectDetail() {
       <section className={`${styles.nav} container`}>
         <button className={styles.navItem} onClick={() => navigate(`/projects/${prevProject.slug}`)}>
           <span className={styles.navDir}>
-            ← {lang === 'tr' ? 'Önceki' : 'Previous'}
+            <ArrowLeft size={14} /> {lang === 'tr' ? 'Önceki' : 'Previous'}
           </span>
           <span className={styles.navName}>{prevProject.name}</span>
         </button>
         <button className={styles.navItem} onClick={() => navigate(`/projects/${nextProject.slug}`)}>
           <span className={styles.navDir}>
-            {lang === 'tr' ? 'Sonraki' : 'Next'} →
+            {lang === 'tr' ? 'Sonraki' : 'Next'} <ArrowRight size={14} />
           </span>
           <span className={styles.navName}>{nextProject.name}</span>
         </button>

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import { featured, caseStudies, thumbs } from '../data/projects'
+import { ArrowLeft, ArrowRight, ArrowUpRight, SearchIcon, CloseIcon } from '../components/icons'
 import styles from './Projects.module.css'
 
 function pad(n) { return String(n).padStart(2, '0') }
@@ -103,8 +104,8 @@ export default function Projects() {
           <div className={styles.controlRow}>
             <span className={styles.featuredLabel}>{toUpper(p.featured)}</span>
             <div className={styles.navBtns}>
-              <button className={styles.navBtn} onClick={() => changeSlide(-1)}>←</button>
-              <button className={styles.navBtn} onClick={() => changeSlide(1)}>→</button>
+              <button className={styles.navBtn} onClick={() => changeSlide(-1)}><ArrowLeft /></button>
+              <button className={styles.navBtn} onClick={() => changeSlide(1)}><ArrowRight /></button>
             </div>
           </div>
 
@@ -156,7 +157,7 @@ export default function Projects() {
             <p className={styles.featuredDesc}>{lang === 'tr' && slide.desc_tr ? slide.desc_tr : slide.desc}</p>
             <button className={styles.btnView} onClick={() => navigate(`/projects/${slide.slug}`)}>
               {p.viewProject}
-              <span className={styles.btnArrow}>↗</span>
+              <span className={styles.btnArrow}><ArrowUpRight /></span>
             </button>
           </div>
 
@@ -291,12 +292,12 @@ export default function Projects() {
                   className={styles.searchClose}
                   onClick={() => { setShowSearch(false); setSearchQuery('') }}
                 >
-                  ✕
+                  <CloseIcon />
                 </button>
               </div>
             ) : (
               <button className={styles.searchBtn} onClick={() => setShowSearch(true)}>
-                <span>⌕</span> {p.search}
+                <SearchIcon /> {p.search}
               </button>
             )}
           </div>
@@ -320,7 +321,7 @@ export default function Projects() {
               <p className={styles.caseDesc}>{lang === 'tr' && cs.desc_tr ? cs.desc_tr : cs.desc}</p>
               <button className={styles.btnView} style={{ marginTop: '16px' }} onClick={() => navigate(`/projects/${cs.slug}`)}>
                 {p.viewProject}
-                <span className={styles.btnArrow}>↗</span>
+                <span className={styles.btnArrow}><ArrowUpRight /></span>
               </button>
             </div>
           </div>
@@ -337,7 +338,7 @@ export default function Projects() {
             <div className={styles.thumbMeta}>
               <p className={styles.thumbType}>{toUpper(types[th.typeKey])}</p>
               <p className={styles.thumbTitle}>
-                {th.name} <span className={styles.arrowLink}>↗</span>
+                {th.name} <span className={styles.arrowLink}><ArrowUpRight size={11} /></span>
               </p>
               <p className={styles.thumbLoc}>{th.location}</p>
             </div>
