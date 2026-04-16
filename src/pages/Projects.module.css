@@ -229,7 +229,8 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  margin-top: 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 .filterBar {
   background: var(--color-off-white);
@@ -430,7 +431,6 @@
   padding: 0 var(--container-pad);
 }
 .caseEntry {
-  border-top: 1px solid var(--color-border);
   padding: 64px 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
