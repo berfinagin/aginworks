@@ -571,6 +571,7 @@
   /* Filter bar: horizontal scroll on small screens */
   .filterBar {
     overflow-x: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     flex-wrap: nowrap;
@@ -580,6 +581,21 @@
   .filterLeft { flex-shrink: 0; }
   .filterCenter { display: none; }
   .filterRight { flex-shrink: 0; }
+  /* Dropdown: fixed so it breaks out of overflow-x container */
+  .filterDropdown {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    min-width: unset;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid var(--color-border);
+    z-index: 45;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
   .filterBarWrap { margin-top: 40px; margin-bottom: 40px; }
   /* Case study cards */
   .caseEntry { padding: 32px 0; gap: 0; }

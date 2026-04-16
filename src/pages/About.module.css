@@ -224,6 +224,11 @@
   .approachNum { padding-top: 0; }
   .serviceItem { gap: 16px; padding: 20px 0; }
   .servicesList { margin-top: 32px; }
-  .founderImage { max-width: 100%; }
-  .teamList { gap: 32px; }
+  /* Team: 2-col grid, square images */
+  .teamList { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .founderImage { aspect-ratio: 1 / 1; max-width: 100%; }
+  .founderName { font-size: 16px; }
+  .founderRole { font-size: 11px; }
+  .founderBio { display: none; }
+  .teamMember { gap: 12px; }
 }
