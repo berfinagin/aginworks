@@ -3,6 +3,7 @@ import './styles/tokens.css'
 import { LanguageProvider } from './contexts/LanguageContext'
 import Header from './components/Header'
 import StickyBar from './components/StickyBar'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
