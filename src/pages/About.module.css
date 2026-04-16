@@ -80,11 +80,16 @@
 .founderMeta {
   padding-top: 4px;
 }
-.founderContent {
+.teamList {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: var(--grid-gap);
   align-items: start;
+}
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .founderImage {
   width: 100%;
@@ -201,7 +206,7 @@
   .introGrid { grid-template-columns: 1fr; gap: 48px; }
   .introText { position: static; }
   .founderGrid { grid-template-columns: 1fr; gap: 32px; }
-  .founderContent { grid-template-columns: 1fr; gap: 32px; }
+  .teamList { grid-template-columns: 1fr; gap: 48px; }
   .founderImage { max-width: 400px; }
   .approachRow { grid-template-columns: 48px 1fr; }
   .approachBody { grid-column: 2; margin-top: 8px; }

@@ -32,24 +32,32 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── FOUNDER ── */}
+      {/* ── TEAM ── */}
       <section className={`${styles.founder} container`}>
         <div className={styles.founderGrid}>
           <div className={styles.founderMeta}>
             <span className="section-label">{a.founderLabel}</span>
           </div>
-          <div className={styles.founderContent}>
-            <div className={styles.founderImage}>
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-                alt={a.founderName}
-              />
-            </div>
-            <div className={styles.founderInfo}>
-              <h3 className={styles.founderName}>{a.founderName}</h3>
-              <p className={styles.founderRole}>{a.founderRole}</p>
-              <p className={styles.founderBio}>{a.founderBio}</p>
-            </div>
+          <div className={styles.teamList}>
+            {a.founders.map((f, i) => (
+              <div className={styles.teamMember} key={i}>
+                <div className={styles.founderImage}>
+                  <img
+                    src={[
+                      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80',
+                      'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80',
+                      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+                    ][i]}
+                    alt={f.name}
+                  />
+                </div>
+                <div className={styles.founderInfo}>
+                  <h3 className={styles.founderName}>{f.name}</h3>
+                  <p className={styles.founderRole}>{f.role}</p>
+                  <p className={styles.founderBio}>{f.bio}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
