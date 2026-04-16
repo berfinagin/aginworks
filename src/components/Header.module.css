@@ -3,10 +3,14 @@
   top: 0; left: 0; right: 0;
   z-index: 60;
   pointer-events: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-med) var(--ease-j);
+}
+.headerScrolled {
+  border-bottom-color: var(--color-border);
 }
 .inner {
   background-color: var(--color-off-white);
-  border-bottom: 1px solid transparent;
   height: 80px;
   display: flex;
   align-items: center;
@@ -15,10 +19,6 @@
   max-width: var(--container-max);
   margin: 0 auto;
   pointer-events: auto;
-  transition: border-color var(--dur-med) var(--ease-j);
-}
-.innerScrolled {
-  border-bottom-color: var(--color-border);
 }
 .logo {
   font-family: var(--font-mono);

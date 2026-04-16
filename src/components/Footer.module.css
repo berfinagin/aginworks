@@ -3,6 +3,7 @@
   color: var(--color-off-white);
   padding: 64px 0 24px;
   margin-top: 120px;
+  border-top: 1px solid rgba(230, 231, 232, 0.15);
 }
 .top {
   display: grid;

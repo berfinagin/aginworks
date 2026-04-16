@@ -25,8 +25,8 @@ export default function Header() {
   }, [menuOpen])
 
   return (
-    <header className={styles.header}>
-      <div className={`${styles.inner} ${scrolled ? styles.innerScrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
+      <div className={styles.inner}>
         <NavLink to="/" className={styles.logo}>
           AGIN WORKS
         </NavLink>
