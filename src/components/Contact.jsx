@@ -18,7 +18,7 @@ export default function Contact() {
         </div>
         <div className={styles.item}>
           <label>{toUpper(c.email)}</label>
-          <p>hello@agin.works</p>
+          <p>info@agin.works</p>
         </div>
         <div className={styles.item}>
           <label>{toUpper(c.services)}</label>
