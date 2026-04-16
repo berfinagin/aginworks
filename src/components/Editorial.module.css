@@ -153,20 +153,27 @@
 @media (max-width: 640px) {
   .section { margin-top: 80px; }
   .header { padding-bottom: 48px; }
-  .row { grid-template-columns: 30px 1fr; padding: 20px 0; }
+  .row {
+    grid-template-columns: 30px 1fr;
+    padding: 20px 0;
+  }
+  /* Disable desktop hover effects on mobile */
+  .row:hover {
+    padding-right: 0;
+  }
   .rowType, .rowYear, .rowStatus { display: none; }
   .rowName {
     font-size: var(--text-h4);
-    transition: transform 0.25s var(--ease-j), font-size 0.25s var(--ease-j);
+    transition: transform 0.25s var(--ease-j);
+    transform-origin: left center;
   }
   .rowImage {
-    width: 120px;
-    height: 56px;
+    width: 140px;
+    height: 96px;
   }
-  /* On press: text shrinks + shifts left, image fits within row height */
+  /* On press: text shrinks + shifts left, image appears */
   .rowActive .rowName {
-    transform: translateX(-16px) scale(0.82);
-    transform-origin: left center;
+    transform: scale(0.78) translateX(-20px);
   }
   .rowActive .rowImage {
     opacity: 1;
