@@ -97,7 +97,7 @@ const translations = {
         email: 'Email',
       },
       copy: '© 2024 Aginworks',
-      city: 'Ankara, Turkey',
+      city: 'Antalya, Turkey',
       rights: 'All rights reserved',
     },
     aboutPage: {
@@ -252,7 +252,7 @@ const translations = {
         email: 'E-posta',
       },
       copy: '© 2024 Aginworks',
-      city: 'Ankara, Türkiye',
+      city: 'Antalya, Türkiye',
       rights: 'Tüm hakları saklıdır',
     },
     aboutPage: {

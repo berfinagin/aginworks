@@ -33,7 +33,7 @@ export default function Footer() {
             <ul>
               <li><a href="https://instagram.com">{f.links.instagram}</a></li>
               <li><a href="https://linkedin.com">{f.links.linkedin}</a></li>
-              <li><a href="mailto:hello@agin.works">{f.links.email}</a></li>
+              <li><a href="mailto:info@agin.works">{f.links.email}</a></li>
             </ul>
           </div>
         </div>
