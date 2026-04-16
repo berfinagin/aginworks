@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
+import { gsap, ScrollTrigger } from '../utils/gsapSetup'
 import styles from './Editorial.module.css'
 
 const ongoingProjects = [
@@ -43,18 +44,52 @@ const ongoingProjects = [
   },
 ]
 
+// Each display line drifts in opposite directions so they spread apart — not into each other
+const WORD_OFFSETS = [-70, 0, 90] // px: top floats up, middle anchored, bottom floats down
+
 export default function Editorial() {
   const navigate = useNavigate()
   const { t, toUpper } = useLang()
   const e = t.editorial
   const types = t.projects.types
   const [activeRow, setActiveRow] = useState(null)
+  const headerRef = useRef(null)
+  const displayWrapRef = useRef(null)
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+
+    const header = headerRef.current
+    const displayWrap = displayWrapRef.current
+    if (!header || !displayWrap) return
+
+    const ctx = gsap.context(() => {
+      const words = displayWrap.querySelectorAll(`.${styles.display}`)
+      if (!words.length) return
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: header,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      })
+
+      words.forEach((word, i) => {
+        tl.to(word, { y: WORD_OFFSETS[i], ease: 'none', duration: 1.4 }, 0)
+      })
+    }, header)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
     <section className={`${styles.section} container`} id="about">
       {/* Header */}
-      <div className={styles.header}>
-        <div className={styles.displayWrap}>
+      <div className={styles.header} ref={headerRef}>
+        <div className={styles.displayWrap} ref={displayWrapRef}>
           <span className={styles.display}>{e.line1}</span>
           <span className={styles.display}>{e.line2}</span>
           <span className={styles.display}>{e.line3}</span>

@@ -1,14 +1,42 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { gsap, ScrollTrigger } from '../utils/gsapSetup'
 
 export default function Reveal({ children, delay = 0 }) {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.6,
+          ease: 'in-j',
+          delay,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      )
+    }, el)
+
+    return () => ctx.revert()
+  }, [delay])
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay }}
-    >
+    <div ref={ref} style={{ opacity: 0 }}>
       {children}
-    </motion.div>
+    </div>
   )
 }

@@ -28,6 +28,16 @@
   overflow: hidden;
   min-height: 500px;
 }
+.parallaxInner {
+  width: 100%;
+  height: 116%;
+  margin-top: -8%;
+}
+.parallaxInner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .btnOutline {
   display: inline-flex;
   align-items: center;
