@@ -39,14 +39,14 @@ const icons = {
 }
 
 export default function WhySection() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const w = t.why
 
   return (
     <section className={`${styles.section} container`}>
       <div className={styles.top}>
         <div className={styles.topLeft}>
-          <span className="section-label">{w.label}</span>
+          <span className="section-label">{toUpper(w.label)}</span>
           <h2 className={styles.heading}>{w.heading}</h2>
         </div>
         <p className={styles.body}>{w.body}</p>
@@ -56,7 +56,7 @@ export default function WhySection() {
         {w.pillars.map((p) => (
           <div className={styles.pillar} key={p.icon}>
             <div className={styles.pillarIcon}>{icons[p.icon]}</div>
-            <span className={styles.pillarLabel}>{p.label}</span>
+            <span className={styles.pillarLabel}>{toUpper(p.label)}</span>
           </div>
         ))}
       </div>

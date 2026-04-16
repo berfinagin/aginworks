@@ -44,7 +44,7 @@ const ongoingProjects = [
 
 export default function Editorial() {
   const navigate = useNavigate()
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const e = t.editorial
   const types = t.projects.types
 
@@ -60,8 +60,8 @@ export default function Editorial() {
         <div className={styles.headerRight}>
           <p className={styles.body}>{e.body}</p>
           <div className={styles.actions}>
-            <Link to="/contact" className="link-arrow">{e.cta1}</Link>
-            <Link to="/projects" className="link-arrow">{e.cta2}</Link>
+            <Link to="/contact" className="link-arrow">{toUpper(e.cta1)}</Link>
+            <Link to="/projects" className="link-arrow">{toUpper(e.cta2)}</Link>
           </div>
         </div>
       </div>
@@ -77,8 +77,8 @@ export default function Editorial() {
           >
             <span className={styles.rowNum}>{proj.id}</span>
             <span className={styles.rowName}>{proj.name}</span>
-            <span className={styles.rowType}>{types[proj.typeKey]}</span>
-            <span className={styles.rowLocation}>{proj.location}</span>
+            <span className={styles.rowType}>{toUpper(types[proj.typeKey])}</span>
+            <span className={styles.rowLocation}>{toUpper(proj.location)}</span>
             <span className={styles.rowYear}>{proj.year}</span>
             <span className={styles.rowStatus} />
             {/* Image revealed on hover */}

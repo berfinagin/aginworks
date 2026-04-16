@@ -3,7 +3,7 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './Contact.module.css'
 
 export default function Contact() {
-  const { t, lang } = useLang()
+  const { t, lang, toUpper } = useLang()
   const c = t.contactPage
   const [form, setForm] = useState({ name: '', email: '', project: '' })
   const [status, setStatus] = useState(null) // 'sending' | 'success' | 'error'
@@ -48,19 +48,19 @@ export default function Contact() {
 
             <div className={styles.infoList}>
               <div className={styles.infoRow}>
-                <span className={styles.infoLabel}>{c.locationLabel}</span>
+                <span className={styles.infoLabel}>{toUpper(c.locationLabel)}</span>
                 <span className={styles.infoValue}>{c.locationValue}</span>
               </div>
               <div className={styles.infoRow}>
-                <span className={styles.infoLabel}>{c.emailLabel}</span>
+                <span className={styles.infoLabel}>{toUpper(c.emailLabel)}</span>
                 <a href={`mailto:${c.emailValue}`} className={styles.infoLink}>{c.emailValue}</a>
               </div>
               <div className={styles.infoRow}>
-                <span className={styles.infoLabel}>{c.phoneLabel}</span>
+                <span className={styles.infoLabel}>{toUpper(c.phoneLabel)}</span>
                 <a href={`tel:${c.phoneValue}`} className={styles.infoLink}>{c.phoneValue}</a>
               </div>
               <div className={styles.infoRow}>
-                <span className={styles.infoLabel}>{c.instagramLabel}</span>
+                <span className={styles.infoLabel}>{toUpper(c.instagramLabel)}</span>
                 <span className={styles.infoValue}>{c.instagramValue}</span>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Contact() {
           {/* Right: form */}
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.field}>
-              <label className={styles.fieldLabel}>{c.formName}</label>
+              <label className={styles.fieldLabel}>{toUpper(c.formName)}</label>
               <input
                 className={styles.input}
                 type="text"
@@ -80,7 +80,7 @@ export default function Contact() {
               />
             </div>
             <div className={styles.field}>
-              <label className={styles.fieldLabel}>{c.formEmail}</label>
+              <label className={styles.fieldLabel}>{toUpper(c.formEmail)}</label>
               <input
                 className={styles.input}
                 type="email"
@@ -91,7 +91,7 @@ export default function Contact() {
               />
             </div>
             <div className={styles.field}>
-              <label className={styles.fieldLabel}>{c.formProject}</label>
+              <label className={styles.fieldLabel}>{toUpper(c.formProject)}</label>
               <textarea
                 className={styles.textarea}
                 name="project"

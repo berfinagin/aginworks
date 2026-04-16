@@ -3,7 +3,7 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './Footer.module.css'
 
 export default function Footer() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const f = t.footer
 
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
         <div className={styles.top}>
           <p className={styles.tagline}>{f.tagline}</p>
           <div className={styles.col}>
-            <h4>{f.studio}</h4>
+            <h4>{toUpper(f.studio)}</h4>
             <ul>
               <li><Link to="/about">{f.links.about}</Link></li>
               <li><Link to="/projects">{f.links.projects}</Link></li>
@@ -20,7 +20,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.col}>
-            <h4>{f.services}</h4>
+            <h4>{toUpper(f.services)}</h4>
             <ul>
               <li>{f.links.architecture}</li>
               <li>{f.links.construction}</li>
@@ -29,7 +29,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.col}>
-            <h4>{f.connect}</h4>
+            <h4>{toUpper(f.connect)}</h4>
             <ul>
               <li><a href="https://instagram.com">{f.links.instagram}</a></li>
               <li><a href="https://linkedin.com">{f.links.linkedin}</a></li>
@@ -38,9 +38,9 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <span>{f.copy}</span>
-          <span>{f.city}</span>
-          <span>{f.rights}</span>
+          <span>{toUpper(f.copy)}</span>
+          <span>{toUpper(f.city)}</span>
+          <span>{toUpper(f.rights)}</span>
         </div>
       </div>
     </footer>

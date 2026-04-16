@@ -3,12 +3,12 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './StickyBar.module.css'
 
 export default function StickyBar() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
 
   return (
     <div className={styles.bar}>
-      <Link to="/projects">{t.sticky.projects}</Link>
-      <Link to="/contact">{t.sticky.contact}</Link>
+      <Link to="/projects">{toUpper(t.sticky.projects)}</Link>
+      <Link to="/contact">{toUpper(t.sticky.contact)}</Link>
     </div>
   )
 }

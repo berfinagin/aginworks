@@ -3,13 +3,13 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './AboutStrip.module.css'
 
 export default function AboutStrip() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const a = t.about
 
   return (
     <section className={`${styles.strip} site-grid container`}>
       <div className={styles.text}>
-        <span className="section-label">{a.label}</span>
+        <span className="section-label">{toUpper(a.label)}</span>
         <h2>{a.heading}</h2>
         <p>{a.body}</p>
         <Link to="/contact" className={styles.btnOutline}>

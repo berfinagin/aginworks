@@ -8,7 +8,7 @@ import styles from './Projects.module.css'
 function pad(n) { return String(n).padStart(2, '0') }
 
 export default function Projects() {
-  const { lang, t } = useLang()
+  const { lang, t, toUpper } = useLang()
   const navigate = useNavigate()
   const p = t.projectsPage
   const types = { ...t.projects.types, institutional: lang === 'tr' ? 'Kurumsal' : 'Institutional' }
@@ -98,7 +98,7 @@ export default function Projects() {
 
           {/* Controls row — left 7 cols */}
           <div className={styles.controlRow}>
-            <span className={styles.featuredLabel}>{p.featured}</span>
+            <span className={styles.featuredLabel}>{toUpper(p.featured)}</span>
             <div className={styles.navBtns}>
               <button className={styles.navBtn} onClick={() => changeSlide(-1)}>←</button>
               <button className={styles.navBtn} onClick={() => changeSlide(1)}>→</button>
@@ -124,7 +124,7 @@ export default function Projects() {
                 className={styles.slideImg}
               />
             </AnimatePresence>
-            <span className={styles.catPill}>{types[featured[current].typeKey]}</span>
+            <span className={styles.catPill}>{toUpper(types[featured[current].typeKey])}</span>
           </div>
 
           {/* ── RIGHT IMAGE PANEL (5 cols) ── */}
@@ -143,12 +143,12 @@ export default function Projects() {
                 className={styles.slideImg}
               />
             </AnimatePresence>
-            <span className={styles.catPill}>{types[featured[nextIdx].typeKey]}</span>
+            <span className={styles.catPill}>{toUpper(types[featured[nextIdx].typeKey])}</span>
           </div>
 
           {/* Info — left 7 cols */}
           <div className={styles.featuredInfo}>
-            <p className={styles.productType}>{types[slide.typeKey]}</p>
+            <p className={styles.productType}>{toUpper(types[slide.typeKey])}</p>
             <h2 className={styles.featuredTitle}>{slide.name}</h2>
             <p className={styles.featuredDesc}>{slide.desc}</p>
             <button className={styles.btnView} onClick={() => navigate(`/projects/${slide.slug}`)}>
@@ -173,7 +173,7 @@ export default function Projects() {
       <div className={styles.filterBarWrap}>
         <div className={styles.filterBar} ref={filterRef}>
           <div className={styles.filterLeft}>
-            <span className={styles.filterLabel}>{p.filterLabel}</span>
+            <span className={styles.filterLabel}>{toUpper(p.filterLabel)}</span>
             <div className={styles.filterDropdowns}>
 
               {/* Type filter */}
@@ -182,7 +182,7 @@ export default function Projects() {
                   className={`${styles.filterBtn} ${typeFilter ? styles.filterBtnActive : ''}`}
                   onClick={() => setOpenFilter(openFilter === 'type' ? null : 'type')}
                 >
-                  {typeFilter ? types[typeFilter] : p.filterType} <span>▾</span>
+                  {typeFilter ? toUpper(types[typeFilter]) : toUpper(p.filterType)} <span>▾</span>
                 </button>
                 {openFilter === 'type' && (
                   <div className={styles.filterDropdown}>
@@ -197,7 +197,7 @@ export default function Projects() {
                         className={`${styles.dropdownOption} ${typeFilter === type ? styles.dropdownOptionActive : ''}`}
                         onClick={() => { setTypeFilter(type); setOpenFilter(null) }}
                       >
-                        {types[type] || type}
+                        {toUpper(types[type] || type)}
                       </button>
                     ))}
                   </div>
@@ -307,11 +307,11 @@ export default function Projects() {
             <div className={styles.caseImages}>
               <div className={styles.caseImgPrimary}>
                 <img src={cs.image} alt={cs.name} />
-                <span className={styles.catPill}>{types[cs.typeKey] || cs.typeKey}</span>
+                <span className={styles.catPill}>{toUpper(types[cs.typeKey] || cs.typeKey)}</span>
               </div>
             </div>
             <div className={styles.caseInfo}>
-              <p className={styles.caseType}>{types[cs.typeKey] || cs.typeKey}</p>
+              <p className={styles.caseType}>{toUpper(types[cs.typeKey] || cs.typeKey)}</p>
               <h3 className={styles.caseTitle}>{cs.name}</h3>
               <p className={styles.caseMeta}>{cs.location} · {cs.year}</p>
               <p className={styles.caseDesc}>{cs.desc}</p>
@@ -332,7 +332,7 @@ export default function Projects() {
               <img src={th.image} alt={th.name} />
             </div>
             <div className={styles.thumbMeta}>
-              <p className={styles.thumbType}>{types[th.typeKey]}</p>
+              <p className={styles.thumbType}>{toUpper(types[th.typeKey])}</p>
               <p className={styles.thumbTitle}>
                 {th.name} <span className={styles.arrowLink}>↗</span>
               </p>

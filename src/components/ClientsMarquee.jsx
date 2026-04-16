@@ -12,13 +12,13 @@ const clients = [
 ]
 
 export default function ClientsMarquee() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const doubled = [...clients, ...clients]
 
   return (
     <div className={styles.strip}>
       <div className={styles.header}>
-        <span className="section-label">{t.marquee.label}</span>
+        <span className="section-label">{toUpper(t.marquee.label)}</span>
         <p className={styles.desc}>{t.marquee.desc}</p>
       </div>
       <div className={styles.marqueeWrap}>

@@ -8,14 +8,14 @@ const projects = allProjects.slice(0, 7)
 
 export default function ProjectsGrid() {
   const navigate = useNavigate()
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const p = t.projects
 
   return (
     <section className={`${styles.section} container`} id="projects">
       <div className="site-grid">
         <div className={styles.headlineWrap}>
-          <span className="section-label">{p.label}</span>
+          <span className="section-label">{toUpper(p.label)}</span>
           <h3 className={styles.headline}>
             {p.headline.split('\n').map((line, i) => (
               <span key={i}>{line}{i === 0 && <br />}</span>
@@ -36,7 +36,7 @@ export default function ProjectsGrid() {
             <div className={styles.cardImage}>
               <img src={proj.image} alt={proj.name} />
             </div>
-            <p className={styles.cardType}>{p.types[proj.typeKey]}</p>
+            <p className={styles.cardType}>{toUpper(p.types[proj.typeKey])}</p>
             <p className={styles.cardName}>
               {proj.name} <span className={styles.icon}>↗</span>
             </p>

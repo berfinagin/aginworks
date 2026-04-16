@@ -2,7 +2,7 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './About.module.css'
 
 export default function About() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const a = t.aboutPage
 
   return (
@@ -24,7 +24,7 @@ export default function About() {
             />
           </div>
           <div className={styles.introText}>
-            <span className="section-label">{a.studioLabel}</span>
+            <span className="section-label">{toUpper(a.studioLabel)}</span>
             <h2 className={styles.introHeading}>{a.studioHeading}</h2>
             <p className={styles.introBody}>{a.studioBody1}</p>
             <p className={styles.introBody}>{a.studioBody2}</p>
@@ -36,7 +36,7 @@ export default function About() {
       <section className={`${styles.founder} container`}>
         <div className={styles.founderGrid}>
           <div className={styles.founderMeta}>
-            <span className="section-label">{a.founderLabel}</span>
+            <span className="section-label">{toUpper(a.founderLabel)}</span>
           </div>
           <div className={styles.teamList}>
             {a.founders.map((f, i) => (
@@ -53,7 +53,7 @@ export default function About() {
                 </div>
                 <div className={styles.founderInfo}>
                   <h3 className={styles.founderName}>{f.name}</h3>
-                  <p className={styles.founderRole}>{f.role}</p>
+                  <p className={styles.founderRole}>{toUpper(f.role)}</p>
                   <p className={styles.founderBio}>{f.bio}</p>
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default function About() {
       {/* ── APPROACH ── */}
       <section className={`${styles.approach} container`}>
         <div className={styles.approachHeader}>
-          <span className="section-label">{a.approachLabel}</span>
+          <span className="section-label">{toUpper(a.approachLabel)}</span>
         </div>
         <div className={styles.approachList}>
           {a.approachItems.map((item) => (
@@ -80,7 +80,7 @@ export default function About() {
 
       {/* ── SERVICES ── */}
       <section className={`${styles.services} container`}>
-        <span className="section-label">{a.servicesLabel}</span>
+        <span className="section-label">{toUpper(a.servicesLabel)}</span>
         <div className={styles.servicesList}>
           {a.services.map((s, i) => (
             <div className={styles.serviceItem} key={i}>

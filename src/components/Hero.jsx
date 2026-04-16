@@ -3,7 +3,7 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './Hero.module.css'
 
 export default function Hero() {
-  const { t } = useLang()
+  const { t, toUpper } = useLang()
   const m = t.hero.meta
 
   return (
@@ -13,16 +13,16 @@ export default function Hero() {
 
         <div className={styles.meta}>
           <div className={styles.metaBlock}>
-            <p>{m.city}</p>
-            <p>{m.institution}</p>
-            <p>{m.web}</p>
+            <p>{toUpper(m.city)}</p>
+            <p>{toUpper(m.institution)}</p>
+            <p>{toUpper(m.web)}</p>
           </div>
           <div className={styles.metaBlock}>
-            <p>{m.field1}</p>
-            <p>{m.field2}</p>
-            <p>{m.field3}</p>
+            <p>{toUpper(m.field1)}</p>
+            <p>{toUpper(m.field2)}</p>
+            <p>{toUpper(m.field3)}</p>
           </div>
-          <p className={styles.est}>{m.est}</p>
+          <p className={styles.est}>{toUpper(m.est)}</p>
         </div>
 
         <div className={styles.imageWrap}>

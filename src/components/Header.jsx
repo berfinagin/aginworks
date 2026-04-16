@@ -4,7 +4,7 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './Header.module.css'
 
 export default function Header() {
-  const { lang, toggle, t } = useLang()
+  const { lang, toggle, t, toUpper } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
@@ -37,7 +37,7 @@ export default function Header() {
                 to="/projects"
                 className={({ isActive }) => isActive ? styles.navLinkActive : undefined}
               >
-                {t.nav.caseStudies}
+                {toUpper(t.nav.caseStudies)}
               </NavLink>
             </li>
             <li>
@@ -45,7 +45,7 @@ export default function Header() {
                 to="/about"
                 className={({ isActive }) => isActive ? styles.navLinkActive : undefined}
               >
-                {t.nav.about}
+                {toUpper(t.nav.about)}
               </NavLink>
             </li>
             <li>
@@ -53,7 +53,7 @@ export default function Header() {
                 to="/contact"
                 className={({ isActive }) => isActive ? styles.navLinkActive : undefined}
               >
-                {t.nav.contact}
+                {toUpper(t.nav.contact)}
               </NavLink>
             </li>
             <li>
@@ -81,7 +81,7 @@ export default function Header() {
               to="/projects"
               className={({ isActive }) => isActive ? styles.mobileNavActive : undefined}
             >
-              {t.nav.caseStudies}
+              {toUpper(t.nav.caseStudies)}
             </NavLink>
           </li>
           <li>
@@ -89,7 +89,7 @@ export default function Header() {
               to="/about"
               className={({ isActive }) => isActive ? styles.mobileNavActive : undefined}
             >
-              {t.nav.about}
+              {toUpper(t.nav.about)}
             </NavLink>
           </li>
           <li>
@@ -97,7 +97,7 @@ export default function Header() {
               to="/contact"
               className={({ isActive }) => isActive ? styles.mobileNavActive : undefined}
             >
-              {t.nav.contact}
+              {toUpper(t.nav.contact)}
             </NavLink>
           </li>
           <li className={styles.mobileNavLangRow}>

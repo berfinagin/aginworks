@@ -5,7 +5,7 @@ import styles from './ProjectDetail.module.css'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const { t, lang } = useLang()
+  const { t, lang, toUpper } = useLang()
   const navigate = useNavigate()
 
   const idx     = allProjects.findIndex(p => p.slug === slug)
@@ -36,7 +36,7 @@ export default function ProjectDetail() {
         <img src={project.image} alt={project.name} className={styles.heroImg} />
         <div className={styles.heroOverlay} />
         <div className={`${styles.heroContent} container`}>
-          <span className={styles.heroType}>{types[project.typeKey]}</span>
+          <span className={styles.heroType}>{toUpper(types[project.typeKey])}</span>
           <h1 className={styles.heroTitle}>{project.name}</h1>
         </div>
       </div>
@@ -49,20 +49,20 @@ export default function ProjectDetail() {
           <div className={styles.meta}>
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>
-                {lang === 'tr' ? 'Tür' : 'Type'}
+                {toUpper(lang === 'tr' ? 'Tür' : 'Type')}
               </span>
               <span className={styles.metaValue}>{types[project.typeKey]}</span>
             </div>
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>
-                {lang === 'tr' ? 'Konum' : 'Location'}
+                {toUpper(lang === 'tr' ? 'Konum' : 'Location')}
               </span>
               <span className={styles.metaValue}>{project.location}</span>
             </div>
             {project.year && (
               <div className={styles.metaRow}>
                 <span className={styles.metaLabel}>
-                  {lang === 'tr' ? 'Yıl' : 'Year'}
+                  {toUpper(lang === 'tr' ? 'Yıl' : 'Year')}
                 </span>
                 <span className={styles.metaValue}>{project.year}</span>
               </div>
