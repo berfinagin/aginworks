@@ -1,0 +1,120 @@
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useLang } from '../contexts/LanguageContext'
+import { allProjects } from '../data/projects'
+import styles from './ProjectDetail.module.css'
+
+export default function ProjectDetail() {
+  const { slug } = useParams()
+  const { t, lang } = useLang()
+  const navigate = useNavigate()
+
+  const idx     = allProjects.findIndex(p => p.slug === slug)
+  const project = allProjects[idx]
+
+  if (!project) {
+    return (
+      <div className={styles.notFound}>
+        <p>Project not found.</p>
+        <Link to="/projects">← Back to projects</Link>
+      </div>
+    )
+  }
+
+  const types = {
+    ...t.projects.types,
+    institutional: lang === 'tr' ? 'Kurumsal' : 'Institutional',
+  }
+
+  const prevProject = allProjects[(idx - 1 + allProjects.length) % allProjects.length]
+  const nextProject = allProjects[(idx + 1) % allProjects.length]
+
+  return (
+    <div className={styles.page}>
+
+      {/* ── HERO ── */}
+      <div className={styles.hero}>
+        <img src={project.image} alt={project.name} className={styles.heroImg} />
+        <div className={styles.heroOverlay} />
+        <div className={`${styles.heroContent} container`}>
+          <span className={styles.heroType}>{types[project.typeKey]}</span>
+          <h1 className={styles.heroTitle}>{project.name}</h1>
+        </div>
+      </div>
+
+      {/* ── INFO ── */}
+      <section className={`${styles.info} container`}>
+        <div className={styles.infoGrid}>
+
+          {/* Meta sidebar */}
+          <div className={styles.meta}>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>
+                {lang === 'tr' ? 'Tür' : 'Type'}
+              </span>
+              <span className={styles.metaValue}>{types[project.typeKey]}</span>
+            </div>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>
+                {lang === 'tr' ? 'Konum' : 'Location'}
+              </span>
+              <span className={styles.metaValue}>{project.location}</span>
+            </div>
+            {project.year && (
+              <div className={styles.metaRow}>
+                <span className={styles.metaLabel}>
+                  {lang === 'tr' ? 'Yıl' : 'Year'}
+                </span>
+                <span className={styles.metaValue}>{project.year}</span>
+              </div>
+            )}
+            <Link to="/projects" className={styles.backLink}>
+              ← {lang === 'tr' ? 'Tüm projeler' : 'All projects'}
+            </Link>
+          </div>
+
+          {/* Description */}
+          <div className={styles.descBlock}>
+            <p className={styles.descLead}>{project.desc}</p>
+            {project.longDesc && project.longDesc.split('\n\n').map((para, i) => (
+              <p className={styles.descBody} key={i}>{para}</p>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── IMAGE GALLERY ── */}
+      {project.images && project.images.length > 0 && (
+        <section className={`${styles.gallery} container`}>
+          <div className={styles.galleryGrid}>
+            {project.images.map((src, i) => (
+              <div
+                className={`${styles.galleryItem} ${i === 0 ? styles.galleryItemWide : ''}`}
+                key={i}
+              >
+                <img src={src} alt={`${project.name} ${i + 1}`} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── NEXT / PREV ── */}
+      <section className={`${styles.nav} container`}>
+        <button className={styles.navItem} onClick={() => navigate(`/projects/${prevProject.slug}`)}>
+          <span className={styles.navDir}>
+            ← {lang === 'tr' ? 'Önceki' : 'Previous'}
+          </span>
+          <span className={styles.navName}>{prevProject.name}</span>
+        </button>
+        <button className={styles.navItem} onClick={() => navigate(`/projects/${nextProject.slug}`)}>
+          <span className={styles.navDir}>
+            {lang === 'tr' ? 'Sonraki' : 'Next'} →
+          </span>
+          <span className={styles.navName}>{nextProject.name}</span>
+        </button>
+      </section>
+
+    </div>
+  )
+}
