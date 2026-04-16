@@ -56,9 +56,9 @@ export default function Projects() {
     return () => document.removeEventListener('mousedown', onOutside)
   }, [])
 
-  // Unique filter values derived from all projects
+  // Filter values
   const allFilterable = [...featured, ...caseStudies, ...thumbs]
-  const uniqueTypes     = [...new Set(allFilterable.map(pr => pr.typeKey))]
+  const uniqueTypes     = Object.keys(types)
   const uniqueLocations = [...new Set(allFilterable.map(pr => pr.location).filter(Boolean))]
   const uniqueYears     = [...new Set(allFilterable.map(pr => pr.year).filter(Boolean))].sort((a, b) => b - a)
 
