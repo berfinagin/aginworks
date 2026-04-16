@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
+import { ArrowUpRight } from './icons'
 import styles from './AboutStrip.module.css'
 
 export default function AboutStrip() {
@@ -14,7 +15,7 @@ export default function AboutStrip() {
         <p>{a.body}</p>
         <Link to="/contact" className={styles.btnOutline}>
           {a.cta}
-          <span className={styles.arrow}>↗</span>
+          <span className={styles.arrow}><ArrowUpRight /></span>
         </Link>
       </div>
       <div className={styles.image}>

@@ -16,7 +16,7 @@ export default function ProjectDetail() {
     return (
       <div className={styles.notFound}>
         <p>Project not found.</p>
-        <Link to="/projects">← Back to projects</Link>
+        <Link to="/projects"><ArrowLeft size={14} /> Back to projects</Link>
       </div>
     )
   }
@@ -69,7 +69,7 @@ export default function ProjectDetail() {
               </div>
             )}
             <Link to="/projects" className={styles.backLink}>
-              ← {lang === 'tr' ? 'Tüm projeler' : 'All projects'}
+              <ArrowLeft size={14} /> {lang === 'tr' ? 'Tüm projeler' : 'All projects'}
             </Link>
           </div>
 
