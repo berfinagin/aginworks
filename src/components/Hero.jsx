@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
 import styles from './Hero.module.css'
 
@@ -29,10 +30,10 @@ export default function Hero() {
             src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80"
             alt="Featured architectural project"
           />
-          <a href="#projects" className={styles.btnPill}>
+          <Link to="/projects" className={styles.btnPill}>
             {t.hero.cta}
             <span className={styles.arrow}>↗</span>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -41,10 +42,10 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1536895058696-a69b1c7ba34f?w=1400&q=80"
           alt="Architectural detail"
         />
-        <a href="#projects" className={styles.btnPill}>
+        <Link to="/projects" className={styles.btnPill}>
           {t.hero.ctaHero}
           <span className={styles.arrow}>→</span>
-        </a>
+        </Link>
       </div>
     </section>
   )
