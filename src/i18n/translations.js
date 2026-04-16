@@ -56,7 +56,7 @@ const translations = {
     projects: {
       label: 'Our Projects',
       headline: 'Precisely crafted.\nEndlessly considered.',
-      cta: 'Explore custom solutions',
+      cta: 'All Projects',
       types: {
         residential: 'Residential',
         cultural: 'Cultural',
@@ -220,7 +220,7 @@ const translations = {
     projects: {
       label: 'Projelerimiz',
       headline: 'Titizlikle tasarlandı.\nSonsuz kez düşünüldü.',
-      cta: 'Özel çözümleri keşfet',
+      cta: 'Tüm Projeler',
       types: {
         residential: 'Konut',
         cultural: 'Kültürel',
