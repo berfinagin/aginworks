@@ -27,7 +27,7 @@ export default function Hero() {
 
         <div className={styles.imageWrap}>
           <img
-            src="/projects/altintas-konut/cover.jpg"
+            src="/projects/altintas-antalya/cover.jpg"
             alt="Featured architectural project"
           />
           <Link to="/projects" className={styles.btnPill}>
@@ -39,7 +39,7 @@ export default function Hero() {
 
       <div className={styles.right}>
         <img
-          src="/projects/dosemealti-villa/cover.jpg"
+          src="/projects/altinova-antalya/cover.jpg"
           alt="Architectural detail"
         />
         <Link to="/projects" className={styles.btnPill}>

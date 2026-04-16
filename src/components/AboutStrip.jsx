@@ -19,7 +19,7 @@ export default function AboutStrip() {
       </div>
       <div className={styles.image}>
         <img
-          src="/projects/sila-villa/cover.jpg"
+          src="/projects/dosemealti-icmimari/cover.jpg"
           alt="Studio at work"
         />
       </div>
