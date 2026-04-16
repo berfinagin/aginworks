@@ -67,14 +67,14 @@ const translations = {
     about: {
       label: 'Studio',
       heading: 'Work that speaks through material and light.',
-      body: 'We are an architectural and construction practice based in Ankara, Turkey. Our work spans residential, cultural, and urban projects — each grounded in the specificity of place, material, and programme.',
+      body: 'We are an architectural and construction practice based in Antalya, Turkey. Our work spans residential, cultural, and urban projects — each grounded in the specificity of place, material, and programme.',
       cta: 'Work with us',
     },
     contact: {
       label: 'Contact',
       heading: 'Let\'s build something that lasts.',
       location: 'Location',
-      locationValue: 'Ankara, Turkey',
+      locationValue: 'Antalya, Turkey',
       email: 'Email',
       services: 'Services',
       servicesList: ['Architecture', 'Construction', 'Interior Design'],
@@ -104,7 +104,7 @@ const translations = {
       title: 'About',
       studioLabel: 'Studio',
       studioHeading: 'We build with intention.',
-      studioBody1: 'Aginworks is an architectural and construction practice based in Ankara, Turkey, founded by architect Berfin Agin. The studio works across residential, cultural, commercial, and urban typologies — each project grounded in the specificity of place, material, and programme.',
+      studioBody1: 'Aginworks is an architectural and construction practice based in Antalya, Turkey, founded by architect Berfin Agin. The studio works across residential, cultural, commercial, and urban typologies — each project grounded in the specificity of place, material, and programme.',
       studioBody2: 'We believe that the best architecture emerges from a rigorous understanding of context, a commitment to material quality, and a refusal to follow trends for their own sake. Our work is slow, considered, and built to last.',
       founderLabel: 'Team',
       founders: [
@@ -159,7 +159,7 @@ const translations = {
   tr: {
     nav: {
       projects: 'Projeler',
-      about: 'Hakkında',
+      about: 'Hakkımızda',
       contact: 'İletişim',
       caseStudies: 'Projeler',
     },
@@ -180,6 +180,7 @@ const translations = {
         hospitality: 'Konaklama',
         urban: 'Kentsel',
         landscape: 'Peyzaj',
+        institutional: 'Kurumsal',
       },
     },
     hero: {
@@ -224,14 +225,14 @@ const translations = {
     about: {
       label: 'Stüdyo',
       heading: 'Malzeme ve ışıkla konuşan işler.',
-      body: 'Ankara merkezli bir mimarlık ve inşaat pratiğiyiz. Konut, kültürel ve kentsel projeleri kapsayan çalışmalarımız; yer, malzeme ve programa özgün bir zemine dayanmaktadır.',
+      body: 'Antalya merkezli bir mimarlık ve inşaat pratiğiyiz. Konut, kültürel ve kentsel projeleri kapsayan çalışmalarımız; yer, malzeme ve programa özgü bir zemine dayanmaktadır.',
       cta: 'Birlikte çalışalım',
     },
     contact: {
       label: 'İletişim',
       heading: 'Kalıcı bir şey inşa edelim.',
       location: 'Konum',
-      locationValue: 'Ankara, Türkiye',
+      locationValue: 'Antalya, Türkiye',
       email: 'E-posta',
       services: 'Hizmetler',
       servicesList: ['Mimarlık', 'İnşaat', 'İç Mekân Tasarımı'],
@@ -240,7 +241,7 @@ const translations = {
       tagline: 'Malzeme dürüstlüğü, mekânsal derinlik ve kalıcı niteliğe dayanan mimarlık ve inşaat.',
       studio: 'Stüdyo',
       services: 'Hizmetler',
-      connect: 'Bağlantı',
+      connect: 'Bağlantılar',
       links: {
         about: 'Hakkında',
         projects: 'Projeler',
@@ -258,10 +259,10 @@ const translations = {
       rights: 'Tüm hakları saklıdır',
     },
     aboutPage: {
-      title: 'Hakkında',
+      title: 'Hakkımızda',
       studioLabel: 'Stüdyo',
       studioHeading: 'Niyetle inşa ediyoruz.',
-      studioBody1: 'Aginworks, mimar Berfin Agin tarafından kurulan Ankara merkezli bir mimarlık ve inşaat pratiğidir. Stüdyo; konut, kültürel, ticari ve kentsel tipolojiler üzerinde çalışmakta olup her proje yer, malzeme ve programa özgün bir zemine dayanmaktadır.',
+      studioBody1: 'Aginworks, mimar Berfin Agin tarafından kurulan Antalya merkezli bir mimarlık ve inşaat pratiğidir. Stüdyo; konut, kültürel, ticari ve kentsel tipolojiler üzerinde çalışmakta olup her proje yer, malzeme ve programa özgün bir zemine dayanmaktadır.',
       studioBody2: 'En iyi mimarinin; bağlamın titiz bir şekilde anlaşılmasından, malzeme kalitesine olan bağlılıktan ve trendleri salt takip etme reddi üzerine inşa edildiğine inanıyoruz. Çalışmalarımız yavaş, düşünülmüş ve kalıcı olmak üzere tasarlanmıştır.',
       founderLabel: 'Ekip',
       founders: [
