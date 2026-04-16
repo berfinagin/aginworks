@@ -155,15 +155,22 @@
   .header { padding-bottom: 48px; }
   .row { grid-template-columns: 30px 1fr; padding: 20px 0; }
   .rowType, .rowYear, .rowStatus { display: none; }
-  .rowName { font-size: var(--text-h4); }
+  .rowName {
+    font-size: var(--text-h4);
+    transition: transform 0.25s var(--ease-j), font-size 0.25s var(--ease-j);
+  }
   .rowImage {
-    width: 160px;
-    height: 110px;
+    width: 120px;
+    height: 56px;
+  }
+  /* On press: text shrinks + shifts left, image fits within row height */
+  .rowActive .rowName {
+    transform: translateX(-16px) scale(0.82);
+    transform-origin: left center;
   }
   .rowActive .rowImage {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
-  .rowActive .rowName { transform: translateX(8px); }
   .display { font-size: var(--text-h2-sm); }
 }
