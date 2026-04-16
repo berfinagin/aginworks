@@ -93,24 +93,39 @@
 @media (max-width: 640px) {
   .section { margin-top: 64px; }
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
-    column-gap: var(--grid-gap);
-    margin-top: 32px;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    margin-top: 24px;
   }
-  .card { grid-column: span 1; }
-  .cardImage { aspect-ratio: 3 / 4; }
+  .card {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .cardImage {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+  }
+  .cardType { margin-top: 0; margin-bottom: 4px; font-size: 11px; }
+  .cardName { font-size: 15px; border-bottom: none; }
   .cardCta {
-    grid-column: span 2;
+    grid-column: span 1;
     aspect-ratio: unset;
-    height: 120px;
+    height: 72px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 24px;
+    padding: 0;
+    border-top: none;
   }
-  .cardCta p { font-size: 22px; }
-  .bigArrow { margin-top: 0; font-size: 32px; }
+  .cardCta p { font-size: 16px; }
+  .bigArrow { margin-top: 0; font-size: 24px; }
   .headline { margin-top: 12px; }
   .divider { margin-top: 40px; }
 }
