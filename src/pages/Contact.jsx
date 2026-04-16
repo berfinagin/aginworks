@@ -3,16 +3,31 @@ import { useLang } from '../contexts/LanguageContext'
 import styles from './Contact.module.css'
 
 export default function Contact() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const c = t.contactPage
   const [form, setForm] = useState({ name: '', email: '', project: '' })
+  const [status, setStatus] = useState(null) // 'sending' | 'success' | 'error'
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const mailto = `mailto:hello@agin.works?subject=Project Enquiry from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.project)}`
-    window.location.href = mailto
+    setStatus('sending')
+    try {
+      const res = await fetch('https://formspree.io/f/xkokjweq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.project }),
+      })
+      if (res.ok) {
+        setStatus('success')
+        setForm({ name: '', email: '', project: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -85,7 +100,19 @@ export default function Contact() {
                 rows={6}
               />
             </div>
-            <button type="submit" className={styles.submit}>{c.formSend}</button>
+            <button type="submit" className={styles.submit} disabled={status === 'sending'}>
+              {status === 'sending' ? '...' : c.formSend}
+            </button>
+            {status === 'success' && (
+              <p className={styles.formSuccess}>
+                {lang === 'tr' ? 'Mesajınız iletildi.' : 'Message sent successfully.'}
+              </p>
+            )}
+            {status === 'error' && (
+              <p className={styles.formError}>
+                {lang === 'tr' ? 'Bir hata oluştu, tekrar deneyin.' : 'Something went wrong, please try again.'}
+              </p>
+            )}
           </form>
 
         </div>

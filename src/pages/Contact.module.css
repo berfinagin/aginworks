@@ -128,6 +128,24 @@
 .submit:hover {
   opacity: 0.8;
 }
+.submit:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.formSuccess {
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.formError {
+  font-family: var(--font-mono);
+  font-size: var(--text-caps);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c0392b;
+}
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
