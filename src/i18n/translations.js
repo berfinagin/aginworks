@@ -23,6 +23,8 @@ const translations = {
         hospitality: 'Hospitality',
         urban: 'Urban',
         landscape: 'Landscape',
+        uygulama: 'Implementation Project',
+        constructed: 'Constructed',
       },
     },
     hero: {
@@ -62,6 +64,8 @@ const translations = {
         urban: 'Urban',
         landscape: 'Landscape',
         institutional: 'Institutional',
+        uygulama: 'Implementation Project',
+        constructed: 'Constructed',
       },
     },
     about: {
@@ -181,6 +185,8 @@ const translations = {
         urban: 'Kentsel',
         landscape: 'Peyzaj',
         institutional: 'Kurumsal',
+        uygulama: 'Uygulama Projesi',
+        constructed: 'İnşa Edilmiş',
       },
     },
     hero: {
@@ -220,6 +226,8 @@ const translations = {
         urban: 'Kentsel',
         landscape: 'Peyzaj',
         institutional: 'Kurumsal',
+        uygulama: 'Uygulama Projesi',
+        constructed: 'İnşa Edilmiş',
       },
     },
     about: {

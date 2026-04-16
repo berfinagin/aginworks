@@ -11,7 +11,10 @@ export default function Projects() {
   const { lang, t, toUpper } = useLang()
   const navigate = useNavigate()
   const p = t.projectsPage
-  const types = { ...t.projects.types, institutional: lang === 'tr' ? 'Kurumsal' : 'Institutional' }
+  const types = {
+    ...t.projects.types,
+    ...t.projectsPage.types,
+  }
 
   // ── Carousel state ──
   const [current, setCurrent] = useState(0)
