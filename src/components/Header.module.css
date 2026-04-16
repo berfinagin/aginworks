@@ -103,13 +103,13 @@
   background: var(--color-off-white);
   border-bottom: 1px solid var(--color-border);
   pointer-events: auto;
-  padding: 8px var(--container-pad) 32px;
+  padding: 4px var(--container-pad) 20px;
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--dur-med) var(--ease-j);
 }
 .mobileMenuOpen {
-  max-height: 480px;
+  max-height: 280px;
 }
 .mobileNav {
   list-style: none;
@@ -118,12 +118,12 @@
 }
 .mobileNav li a {
   display: block;
-  padding: 20px 0;
+  padding: 13px 0;
   font-family: var(--font-mono);
-  font-size: var(--text-h5);
+  font-size: var(--text-micro);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: var(--color-black);
   border-bottom: 1px solid var(--color-border-light);
   opacity: 0.75;
@@ -133,7 +133,7 @@
 .mobileNav li a:active { opacity: 1; }
 .mobileNavActive { opacity: 1 !important; }
 .mobileNavLangRow {
-  padding-top: 20px;
+  padding-top: 14px;
 }
 .mobileLangToggle {
   font-family: var(--font-mono);

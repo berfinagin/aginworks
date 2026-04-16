@@ -58,9 +58,11 @@
   .col { grid-column: span 1; }
 }
 @media (max-width: 640px) {
-  .footer { margin-top: 64px; padding: 48px 0 24px; }
-  .top { grid-template-columns: 1fr; gap: 24px; }
-  .tagline { grid-column: 1 / -1; font-size: var(--text-body); }
-  .col { grid-column: 1 / -1; }
-  .bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer { margin-top: 48px; padding: 40px 0 20px; }
+  .top { grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 32px; }
+  .tagline { grid-column: 1 / -1; font-size: var(--text-micro); line-height: 1.6; }
+  .col { grid-column: span 1; }
+  .col h4 { margin-bottom: 10px; }
+  .col li { font-size: var(--text-micro); margin-bottom: 6px; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 20px; }
 }

@@ -132,7 +132,12 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
     --text-display: 52px;
     --text-h2:      28px;
     --text-h2-sm:   28px;
-    --text-h3:      36px;
+    --text-h3:      32px;
+    --text-h4:      26px;
+    --text-h5:      20px;
+    --text-body:    16px;
+    --text-micro:   13px;
+    --text-btn:     14px;
     --container-pad: 20px;
   }
 }
