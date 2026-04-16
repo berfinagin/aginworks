@@ -6,7 +6,6 @@
 }
 .inner {
   background-color: var(--color-off-white);
-  border-bottom: 1px solid transparent;
   height: 80px;
   display: flex;
   align-items: center;
@@ -15,11 +14,21 @@
   max-width: var(--container-max);
   margin: 0 auto;
   pointer-events: auto;
-  transition: border-color var(--dur-med) var(--ease-j),
-              background-color var(--dur-med) var(--ease-j);
+  position: relative;
 }
-.innerScrolled {
-  border-bottom-color: var(--color-border);
+.inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--container-pad);
+  right: var(--container-pad);
+  height: 1px;
+  background: var(--color-border);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-j);
+}
+.innerScrolled::after {
+  opacity: 1;
 }
 .logo {
   font-family: var(--font-mono);
