@@ -197,10 +197,17 @@
   .meta { position: static; }
 }
 @media (max-width: 640px) {
-  .hero { height: 70vh; }
-  .galleryGrid { grid-template-columns: 1fr; }
+  .hero { height: 60vw; min-height: 280px; }
+  .heroContent { padding-bottom: 28px; }
+  .info { margin-top: 40px; }
+  .descLead { font-size: 18px; }
+  .descBody { font-size: 15px; }
+  .metaValue { font-size: 15px; }
+  .gallery { margin-top: 40px; }
+  .galleryGrid { grid-template-columns: 1fr; gap: 10px; }
   .galleryItemWide { grid-column: span 1; aspect-ratio: 4 / 3; }
-  .nav { grid-template-columns: 1fr; }
+  .nav { grid-template-columns: 1fr; margin-top: 48px; padding-bottom: 48px; }
+  .navItem { padding: 28px 0; }
   .navItem:first-child { border-right: none; padding-right: 0; }
   .navItem:last-child { padding-left: 0; text-align: left; align-items: flex-start; }
 }

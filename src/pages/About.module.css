@@ -212,13 +212,18 @@
   .approachBody { grid-column: 2; margin-top: 8px; }
 }
 @media (max-width: 640px) {
-  .intro { margin-top: 64px; }
-  .founder { margin-top: 80px; }
-  .approach { margin-top: 80px; }
-  .services { margin-top: 80px; padding-bottom: 80px; }
-  .approachRow { grid-template-columns: 1fr; gap: 8px; padding: 28px 0; }
-  .approachBody { grid-column: 1; margin-top: 0; }
+  .pageHero { padding-top: 60px; padding-bottom: 40px; }
+  .intro { margin-top: 48px; }
+  .founder { margin-top: 56px; padding-top: 40px; }
+  .approach { margin-top: 56px; padding-top: 40px; }
+  .services { margin-top: 56px; padding-top: 40px; padding-bottom: 56px; }
+  .introBody { font-size: 15px; line-height: 1.7; }
+  .founderBio { font-size: 15px; }
+  .approachRow { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .approachBody { grid-column: 1; margin-top: 0; font-size: 15px; }
   .approachNum { padding-top: 0; }
-  .serviceItem { gap: 16px; padding: 24px 0; }
+  .serviceItem { gap: 16px; padding: 20px 0; }
+  .servicesList { margin-top: 32px; }
   .founderImage { max-width: 100%; }
+  .teamList { gap: 32px; }
 }

@@ -105,37 +105,39 @@
   .right { height: 55vw; margin-top: 0; }
 }
 @media (max-width: 640px) {
+  /* Switch to card layout: image first, text below */
   .hero {
-    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     min-height: auto;
-    padding-bottom: 32px;
-  }
-  .left {
-    grid-column: 1 / -1;
-    padding-top: 16px;
-    gap: 0;
+    max-height: none;
   }
   .right {
-    grid-column: 1 / -1;
-    height: 72vw;
+    order: 0;
+    grid-column: unset;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  .left {
+    order: 1;
+    grid-column: unset;
+    padding: 24px 20px 40px;
+    flex-direction: column;
+    gap: 16px;
   }
   .tagline {
-    font-size: 18px;
+    font-size: 20px;
     max-width: 100%;
-    margin-top: 16px;
-    line-height: 1.4;
+    margin-top: 0;
+    line-height: 1.45;
   }
-  .meta {
-    padding-top: 20px;
-    gap: 12px;
-    grid-template-columns: auto 1fr;
-  }
-  .meta .metaBlock:last-of-type {
-    display: none;
-  }
-  .est { display: none; }
-  .imageWrap {
-    min-height: 52vw;
-    margin-top: 20px;
-  }
+  .meta { display: none; }
+  .imageWrap { display: none; }
 }
