@@ -203,7 +203,7 @@
 .counter {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 16px;
 }
 .counterCurrent {
   font-family: var(--font-body);
