@@ -153,7 +153,7 @@ export default function Projects() {
           <div className={styles.featuredInfo}>
             <p className={styles.productType}>{toUpper(types[slide.typeKey])}</p>
             <h2 className={styles.featuredTitle}>{slide.name}</h2>
-            <p className={styles.featuredDesc}>{slide.desc}</p>
+            <p className={styles.featuredDesc}>{lang === 'tr' && slide.desc_tr ? slide.desc_tr : slide.desc}</p>
             <button className={styles.btnView} onClick={() => navigate(`/projects/${slide.slug}`)}>
               {p.viewProject}
               <span className={styles.btnArrow}>↗</span>
@@ -317,7 +317,7 @@ export default function Projects() {
               <p className={styles.caseType}>{toUpper(types[cs.typeKey] || cs.typeKey)}</p>
               <h3 className={styles.caseTitle}>{cs.name}</h3>
               <p className={styles.caseMeta}>{cs.location} · {cs.year}</p>
-              <p className={styles.caseDesc}>{cs.desc}</p>
+              <p className={styles.caseDesc}>{lang === 'tr' && cs.desc_tr ? cs.desc_tr : cs.desc}</p>
               <button className={styles.btnView} style={{ marginTop: '16px' }} onClick={() => navigate(`/projects/${cs.slug}`)}>
                 {p.viewProject}
                 <span className={styles.btnArrow}>↗</span>

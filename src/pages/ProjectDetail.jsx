@@ -74,10 +74,13 @@ export default function ProjectDetail() {
 
           {/* Description */}
           <div className={styles.descBlock}>
-            <p className={styles.descLead}>{project.desc}</p>
-            {project.longDesc && project.longDesc.split('\n\n').map((para, i) => (
-              <p className={styles.descBody} key={i}>{para}</p>
-            ))}
+            <p className={styles.descLead}>{lang === 'tr' && project.desc_tr ? project.desc_tr : project.desc}</p>
+            {(() => {
+              const body = lang === 'tr' && project.longDesc_tr ? project.longDesc_tr : project.longDesc
+              return body && body.split('\n\n').map((para, i) => (
+                <p className={styles.descBody} key={i}>{para}</p>
+              ))
+            })()}
           </div>
 
         </div>

@@ -6,7 +6,9 @@ export const featured = [
     location: 'Antalya',
     year: '2024',
     desc: 'A premium mixed-use residence in Antalya — curved terraced facades set among pine forest, with commercial ground floor, generous green terraces, and refined material detailing.',
+    desc_tr: 'Antalya\'da çam ormanları arasında yer alan premium karma kullanımlı bir konut — eğrisel teraslı cepheler, ticari zemin kat, geniş yeşil teraslar ve titizlikle seçilmiş malzemelerle tasarlandı.',
     longDesc: 'Altınova Residence redefines urban living in Antalya with a bold curved form that follows the natural contour of its pine-forested site. The building rises through a series of planted terraces that soften the transition between architecture and landscape.\n\nThe ground floor hosts retail and café spaces that activate the street, while upper floors are dedicated to premium residences — each with deep balconies and floor-to-ceiling glazing that frame views into the canopy.\n\nThe material palette combines stone, warm timber, and dark aluminium: a rigorous composition that feels rooted despite its scale.',
+    longDesc_tr: 'Altınova Residence, çam ormanlarının doğal dokusunu takip eden cesur eğrisel formuyla Antalya\'da kentsel yaşamı yeniden tanımlıyor. Bina, mimari ile peyzaj arasındaki geçişi yumuşatan sıralı yeşil teraslarla yükseliyor.\n\nZemin katta sokağa hayat katan mağaza ve kafe alanları yer alırken üst katlarda tavan yüksekliğinde camlar ve derin balkonlarla orman manzarası sunan premium daireler bulunuyor.\n\nTaş, sıcak ahşap ve koyu alüminyumdan oluşan malzeme paleti; ölçeğine rağmen yere sağlam basan bir kompozisyon yaratıyor.',
     image: '/projects/altinova-antalya/cover.jpg',
     images: [
       '/projects/altinova-antalya/01.jpg',
@@ -22,7 +24,9 @@ export const featured = [
     location: 'Antalya',
     year: '2023',
     desc: 'A contemporary residential complex in Altıntaş, Antalya — multiple apartment blocks arranged around a generous shared pool, landscaped gardens, and social spaces.',
+    desc_tr: 'Altıntaş, Antalya\'da çağdaş bir konut kompleksi — geniş ortak havuz, peyzajlı bahçeler ve sosyal alanlar etrafında düzenlenmiş birden fazla apartman bloğundan oluşuyor.',
     longDesc: 'Altıntaş Konut brings together a series of apartment buildings around a shared outdoor heart: a pool terrace with sun loungers, lush palm landscaping, and a pergola structure that provides shade without enclosure.\n\nThe architecture uses a consistent palette of stone cladding and dark metal joinery across all blocks, creating a coherent ensemble despite the varied heights and orientations of each building.\n\nGround-level amenities and retail line the street, ensuring the development contributes positively to its urban context rather than turning its back on it.',
+    longDesc_tr: 'Altıntaş Konut, bir dizi apartman binasını ortak bir dış mekân etrafında bir araya getiriyor: şezlonglu havuz terası, tropikal palmiye peyzajı ve kapalılık hissi vermeden gölge sağlayan pergola.\n\nMimari, tüm bloklarda tutarlı bir taş kaplama ve koyu metal doğrama paleti kullanıyor; her binanın farklı yükseklik ve yönelimlerine karşın uyumlu bir bütün oluşturuyor.\n\nZemin kattaki sosyal alanlar ve mağazalar sokak boyunca uzanarak sitenin kentsel bağlamına katkı sunuyor.',
     image: '/projects/altintas-antalya/cover.jpg',
     images: [
       '/projects/altintas-antalya/01.jpg',
@@ -38,7 +42,9 @@ export const featured = [
     location: 'Antalya',
     year: '2022',
     desc: 'A constructed modern villa in Döşemealtı, Antalya — crisp white cubic volumes, a private pool terrace, and floor-to-ceiling glazing that dissolves the boundary between inside and out.',
+    desc_tr: 'Döşemealtı, Antalya\'da inşa edilmiş modern bir villa — sade beyaz kütleler, özel havuz terası ve iç ile dış mekân sınırını ortadan kaldıran tavan boyunca uzanan camlar.',
     longDesc: 'Döşemealtı Villa is a completed residential project that demonstrates the studio\'s ability to take a design from concept to construction without losing quality. The built result closely mirrors the original render intent.\n\nThe house is organised around a single-level pool terrace that connects directly to the living spaces through large sliding glass doors. The upper volume — pure white, flat-roofed — sits above a more transparent ground floor, creating a floating quality.\n\nMaterial execution is precise: smooth white render, black aluminium frames, timber decking, and stone paving. Nothing is approximate.',
+    longDesc_tr: 'Döşemealtı Villa, stüdyonun bir tasarımı kalite kaybetmeden kavramdan inşaata taşıma yetkinliğini ortaya koyan tamamlanmış bir konut projesidir. İnşa edilen sonuç, özgün render niyetini yakından yansıtmaktadır.\n\nEv, büyük sürme cam kapılar aracılığıyla yaşam alanlarına doğrudan bağlanan tek katlı bir havuz terası etrafında düzenlenmiştir. Saf beyaz, düz çatılı üst kütle, daha şeffaf bir zemin katın üzerinde durarak yüzer bir his yaratmaktadır.\n\nMalzeme uygulaması titizdir: düzgün beyaz sıva, siyah alüminyum doğramalar, ahşap kaplama ve taş döşeme.',
     image: '/projects/dosemealti-villa/cover.jpg',
     images: [
       '/projects/dosemealti-villa/01.jpg',
@@ -54,7 +60,9 @@ export const featured = [
     location: 'Antalya',
     year: '2023',
     desc: 'A large-scale residential development in Antalya, defined by its monumental stone entrance canopy and a carefully landscaped setting with tropical planting.',
+    desc_tr: 'Antalya\'da büyük ölçekli bir konut projesi — anıtsal taş giriş saçağı ve tropikal peyzajıyla öne çıkıyor.',
     longDesc: 'Masadağı Konut occupies a prominent site in Antalya, bringing together several apartment buildings under a cohesive architectural language. The project is anchored by a distinctive stone entrance structure — a gateway that establishes the character and quality of the whole.\n\nThe buildings are arranged to create generous spaces between them: planted courtyards, walking paths, and communal areas that give the development a sense of place rather than density.\n\nFacades combine stone cladding, horizontal banding, and recessed balconies — a composition that reads as unified from a distance while offering variety at human scale.',
+    longDesc_tr: 'Masadağı Konut, Antalya\'da öne çıkan bir alanda birkaç apartman binasını tutarlı bir mimari dil altında bir araya getiriyor. Proje, bütünün karakterini belirleyen özgün taş giriş yapısıyla kendine özgü bir kimlik kazanıyor.\n\nBinalar aralarında cömert açık alanlar bırakacak şekilde düzenleniyor: peyzajlı avlular, yürüyüş yolları ve siteye yoğunluk yerine yer duygusu katan ortak alanlar.\n\nCepheler taş kaplama, yatay bantlar ve gömük balkonları bir araya getiriyor — uzaktan bütünlüklü, yakından ise çeşitlilik sunan bir kompozisyon.',
     image: '/projects/masadagi-antalya/cover.jpg',
     images: [
       '/projects/masadagi-antalya/01.jpg',
@@ -74,7 +82,9 @@ export const caseStudies = [
     location: 'Antalya',
     year: '2022',
     desc: 'Interior design for the Döşemealtı Villa — open-plan living and dining with warm neutral tones, integrated ceiling lighting, marble surfaces, and a bespoke kitchen island.',
+    desc_tr: 'Döşemealtı Villa için iç mimari tasarım — açık plan yaşam ve yemek alanı, sıcak nötr tonlar, entegre tavan aydınlatması, mermer yüzeyler ve özel tasarım mutfak adası.',
     longDesc: 'The interior design of Döşemealtı Villa is conceived as a continuous sequence of spaces that flow from the entrance through the living and dining areas and out to the terrace beyond.\n\nThe palette is warm and restrained: natural stone floors, oak-toned cabinetry, linen upholstery, and concealed lighting that washes surfaces rather than punctuating them. The kitchen is centred on a generous marble island that anchors the open-plan layout.\n\nEvery material decision reinforces the connection between interior and exterior — the same stone species appears inside and out, and the joinery tones echo the timber decking on the terrace.',
+    longDesc_tr: 'Döşemealtı Villa\'nın iç mimari tasarımı, girişten yaşam ve yemek alanlarına, oradan da terasa uzanan kesintisiz bir mekân dizisi olarak kurgulanmıştır.\n\nPalet sıcak ve sade: doğal taş zemin, meşe tonlu dolaplar, keten döşeme ve yüzeyleri yıkayan gizli aydınlatma. Mutfak, açık plan düzeni sabitleyen geniş bir mermer ada etrafında şekillenmektedir.\n\nHer malzeme kararı iç ve dış mekân bağlantısını pekiştiriyor — aynı taş türü içeride ve dışarıda kullanılırken doğrama tonları terastaki ahşap kaplamayla yankı buluyor.',
     image: '/projects/dosemealti-icmimari/cover.jpg',
     images: [
       '/projects/dosemealti-icmimari/01.jpg',
@@ -91,7 +101,9 @@ export const caseStudies = [
     location: 'Antalya',
     year: '2023',
     desc: 'Apartment interior design for Masadağı Konut — modern living spaces with integrated lighting, soft neutral tones, and carefully detailed finishes throughout.',
+    desc_tr: 'Masadağı Konut için daire iç mimari tasarımı — entegre aydınlatma, yumuşak nötr tonlar ve özenle detaylandırılmış bitiş malzemeleriyle modern yaşam alanları.',
     longDesc: 'The Masadağı apartment interiors bring the same design rigour found in the building\'s architecture into the individual units. Open-plan living and dining spaces are defined by integrated ceiling lighting, warm-toned wall panels, and a considered material palette.\n\nFurniture arrangements are generous without being overscaled — each space feels comfortable and proportionate. The kitchen connects to the dining area in a continuous sequence, separated only by material change rather than walls.\n\nNatural light is maximised through the full-height glazed facades, and the interior palette is deliberately neutral to complement rather than compete with the views.',
+    longDesc_tr: 'Masadağı daire iç mimarileri, binanın mimarisindeki aynı tasarım titizliğini bireysel dairelere taşıyor. Açık plan yaşam ve yemek alanları; entegre tavan aydınlatması, sıcak tonlu duvar panelleri ve düşünülmüş bir malzeme paletiyle tanımlanıyor.\n\nMobilya düzenlemeleri fazla yer kaplamadan cömert — her mekân rahat ve orantılı hissettiriyor. Mutfak, duvarlarla değil yalnızca malzeme değişimiyle ayrılan kesintisiz bir dizide yemek alanına bağlanıyor.\n\nDoğal ışık tavan yüksekliğindeki camlar aracılığıyla en üst düzeye çıkarılıyor; iç mekan paleti manzarayla rekabet etmek yerine onu tamamlamak amacıyla bilinçli olarak nötr tutulmuştur.',
     image: '/projects/masadagi-icmimari/cover.jpg',
     images: [
       '/projects/masadagi-icmimari/01.jpg',
@@ -110,6 +122,7 @@ export const thumbs = [
     location: 'Antalya',
     year: '2024',
     desc: 'A premium mixed-use residence in Antalya — curved terraced facades set among pine forest, with commercial ground floor, generous green terraces, and refined material detailing.',
+    desc_tr: 'Antalya\'da çam ormanları arasında yer alan premium karma kullanımlı bir konut — eğrisel teraslı cepheler, ticari zemin kat ve geniş yeşil teraslar.',
     image: '/projects/altinova-antalya/cover.jpg',
     images: [
       '/projects/altinova-antalya/01.jpg',
@@ -125,6 +138,7 @@ export const thumbs = [
     location: 'Antalya',
     year: '2023',
     desc: 'A contemporary residential complex in Altıntaş, Antalya — multiple apartment blocks arranged around a generous shared pool, landscaped gardens, and social spaces.',
+    desc_tr: 'Altıntaş, Antalya\'da çağdaş bir konut kompleksi — geniş ortak havuz ve peyzajlı bahçeler etrafında düzenlenmiş apartman blokları.',
     image: '/projects/altintas-antalya/cover.jpg',
     images: [
       '/projects/altintas-antalya/01.jpg',
@@ -140,6 +154,7 @@ export const thumbs = [
     location: 'Antalya',
     year: '2022',
     desc: 'A constructed modern villa in Döşemealtı, Antalya — crisp white cubic volumes, a private pool terrace, and floor-to-ceiling glazing that dissolves the boundary between inside and out.',
+    desc_tr: 'Döşemealtı, Antalya\'da inşa edilmiş modern bir villa — beyaz kütleler, özel havuz terası ve tavan boyunca uzanan camlar.',
     image: '/projects/dosemealti-villa/cover.jpg',
     images: [
       '/projects/dosemealti-villa/01.jpg',
@@ -155,6 +170,7 @@ export const thumbs = [
     location: 'Antalya',
     year: '2023',
     desc: 'A large-scale residential development in Antalya, defined by its monumental stone entrance canopy and a carefully landscaped setting with tropical planting.',
+    desc_tr: 'Antalya\'da büyük ölçekli bir konut projesi — anıtsal taş giriş saçağı ve tropikal peyzajıyla öne çıkıyor.',
     image: '/projects/masadagi-antalya/cover.jpg',
     images: [
       '/projects/masadagi-antalya/01.jpg',
@@ -170,7 +186,9 @@ export const thumbs = [
     location: 'İzmir',
     year: '2022',
     desc: 'A three-storey stone and timber villa on the Karaburun Peninsula, İzmir — designed with decorative ironwork balconies and generous terraces overlooking the Aegean coastline.',
+    desc_tr: 'İzmir Karaburun Yarımadası\'nda üç katlı taş ve ahşap villa — dekoratif demir balkonlar ve Ege kıyısına bakan geniş teraslarıyla tasarlandı.',
     longDesc: 'Karaburun Villa sits on a sloped site on the Karaburun Peninsula, one of the most scenic stretches of the İzmir coastline. The design combines local stone with warm timber cladding and decorative ironwork balcony screens.\n\nThree floors step down the hillside, each with generous outdoor terraces that frame views of the Aegean. The ground floor is set into the landscape, reducing the building\'s visual mass and anchoring it to the site.',
+    longDesc_tr: 'Karaburun Villa, İzmir kıyı şeridinin en güzel kesimlerinden biri olan Karaburun Yarımadası\'nda eğimli bir arazide yer almaktadır. Tasarım, yerel taşı sıcak ahşap kaplama ve dekoratif demir balkon ekranlarıyla bir araya getiriyor.\n\nÜç kat yamaçtan aşağıya doğru basamaklanıyor; her katta Ege manzarasını çerçeveleyen geniş açık teraslar yer alıyor.',
     image: '/projects/karaburun-villa/cover.jpg',
     images: [
       '/projects/karaburun-villa/01.jpg',
@@ -186,7 +204,9 @@ export const thumbs = [
     location: 'Antalya',
     year: '2023',
     desc: 'A constructed classical villa in Duacı, Antalya — white rendered volumes, decorative cornices, a tiled hip roof, and formal landscaped gardens with ornamental ironwork gates.',
+    desc_tr: 'Duacı, Antalya\'da inşa edilmiş klasik bir villa — beyaz sıvalı kütleler, dekoratif saçaklar, kiremitli kırma çatı ve süslü demir kapılı formel peyzaj bahçesi.',
     longDesc: 'Duacı Villa is a completed residential project that interprets classical European villa architecture within an Antalya context. The building features a tiled hip roof, decorative facade mouldings, and a formal symmetry that references traditional residential typologies.\n\nThe setting is equally considered: a walled garden with manicured planting, a pool visible from the main facade, and ornamental ironwork gates that frame the arrival sequence.',
+    longDesc_tr: 'Duacı Villa, klasik Avrupa villa mimarisini Antalya bağlamında yeniden yorumlayan tamamlanmış bir konut projesidir. Bina; kiremitli kırma çatı, dekoratif cephe silmeleri ve geleneksel konut tipolojilerine gönderme yapan formel bir simetri içeriyor.\n\nYerleşim de aynı özenle ele alınmış: bakımlı peyzajlı bahçe, ana cepheden görünen havuz ve varış sekansını çerçeveleyen süslü demir kapılar.',
     image: '/projects/duaci-villa/cover.jpg',
     images: [
       '/projects/duaci-villa/01.jpg',

@@ -269,7 +269,7 @@ const translations = {
     aboutPage: {
       title: 'Hakkımızda',
       studioLabel: 'Stüdyo',
-      studioHeading: 'Niyetle inşa ediyoruz.',
+      studioHeading: 'Kalıcı olanı tasarlıyoruz.',
       studioBody1: 'Aginworks, mimar Berfin Agin tarafından kurulan Antalya merkezli bir mimarlık ve inşaat pratiğidir. Stüdyo; konut, kültürel, ticari ve kentsel tipolojiler üzerinde çalışmakta olup her proje yer, malzeme ve programa özgün bir zemine dayanmaktadır.',
       studioBody2: 'En iyi mimarinin; bağlamın titiz bir şekilde anlaşılmasından, malzeme kalitesine olan bağlılıktan ve trendleri salt takip etme reddi üzerine inşa edildiğine inanıyoruz. Çalışmalarımız yavaş, düşünülmüş ve kalıcı olmak üzere tasarlanmıştır.',
       founderLabel: 'Ekip',
