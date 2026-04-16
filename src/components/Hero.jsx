@@ -27,7 +27,7 @@ export default function Hero() {
 
         <div className={styles.imageWrap}>
           <img
-            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80"
+            src="/projects/antalya-villa/cover.jpg"
             alt="Featured architectural project"
           />
           <Link to="/projects" className={styles.btnPill}>
@@ -39,7 +39,7 @@ export default function Hero() {
 
       <div className={styles.right}>
         <img
-          src="https://images.unsplash.com/photo-1536895058696-a69b1c7ba34f?w=1400&q=80"
+          src="/projects/dosemealti-villa/cover.jpg"
           alt="Architectural detail"
         />
         <Link to="/projects" className={styles.btnPill}>
