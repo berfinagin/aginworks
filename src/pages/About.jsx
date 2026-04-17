@@ -79,15 +79,17 @@ export default function About() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className={`${styles.services} container`}>
-        <span className="section-label">{toUpper(a.servicesLabel)}</span>
-        <div className={styles.servicesList}>
-          {a.services.map((s, i) => (
-            <div className={styles.serviceItem} key={i}>
-              <span className={styles.serviceNum}>{String(i + 1).padStart(2, '0')}</span>
-              <span className={styles.serviceName}>{s}</span>
-            </div>
-          ))}
+      <section className={styles.services}>
+        <div className={`${styles.servicesInner} container`}>
+          <h2 className={styles.servicesTitle}>HİZMETLER</h2>
+          <div className={styles.servicesList}>
+            {a.services.map((s, i) => (
+              <div className={styles.serviceItem} key={i}>
+                <span className={styles.serviceNum}>{String(i + 1).padStart(2, '0')}</span>
+                <span className={styles.serviceName}>{s}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

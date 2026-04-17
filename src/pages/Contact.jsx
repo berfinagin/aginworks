@@ -36,6 +36,7 @@ export default function Contact() {
       {/* ── TITLE ── */}
       <div className={`${styles.pageHero} container`}>
         <h1 className={styles.title}>{c.title}</h1>
+        <div className={styles.titleDivider} />
       </div>
 
       {/* ── BODY ── */}

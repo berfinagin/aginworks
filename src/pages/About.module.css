@@ -1,22 +1,24 @@
 .page {
-  padding-top: 80px;
+  padding-bottom: 120px;
 }
 
 /* ── Hero ── */
 .pageHero {
-  padding-top: 80px;
-  padding-bottom: 64px;
-  border-bottom: 1px solid var(--color-border);
+  padding-top: 120px;
+  padding-bottom: 48px;
 }
 .title {
   font-family: var(--font-body);
-  font-size: clamp(64px, 10vw, 160px);
+  font-size: clamp(48px, 8vw, 120px);
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 0.95;
+  line-height: 1;
+  color: var(--color-black);
 }
 .divider {
-  display: none;
+  height: 0.5px;
+  background: var(--color-border);
+  margin-top: 48px;
 }
 
 /* ── Studio Intro ── */
@@ -171,12 +173,23 @@
 /* ── Services ── */
 .services {
   margin-top: 160px;
-  padding-top: 64px;
-  border-top: 1px solid var(--color-border);
-  padding-bottom: 160px;
+  background-color: #686563;
+  color: var(--color-white);
+}
+.servicesInner {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+.servicesTitle {
+  font-family: var(--font-body);
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-white);
+  margin-bottom: 64px;
 }
 .servicesList {
-  margin-top: 48px;
   display: flex;
   flex-direction: column;
 }
@@ -185,20 +198,22 @@
   align-items: center;
   gap: 32px;
   padding: 32px 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .serviceNum {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   text-transform: uppercase;
-  opacity: 0.35;
+  opacity: 0.45;
   min-width: 32px;
+  color: var(--color-white);
 }
 .serviceName {
   font-family: var(--font-body);
   font-size: clamp(28px, 3.5vw, 52px);
   font-weight: 400;
   letter-spacing: -0.02em;
+  color: var(--color-white);
 }
 
 /* ── Responsive ── */
@@ -216,7 +231,9 @@
   .intro { margin-top: 48px; }
   .founder { margin-top: 56px; padding-top: 40px; }
   .approach { margin-top: 56px; padding-top: 40px; }
-  .services { margin-top: 56px; padding-top: 40px; padding-bottom: 56px; }
+  .services { margin-top: 56px; }
+  .servicesInner { padding-top: 48px; padding-bottom: 64px; }
+  .servicesTitle { margin-bottom: 32px; }
 
   /* Intro: text first, image below as a short landscape strip */
   .introGrid { display: flex; flex-direction: column; gap: 32px; }
@@ -253,5 +270,5 @@
 
   /* Services */
   .serviceItem { gap: 16px; padding: 20px 0; }
-  .servicesList { margin-top: 32px; }
+  .servicesList { margin-top: 0; }
 }

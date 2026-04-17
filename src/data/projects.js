@@ -27,7 +27,7 @@ export const featured = [
     desc_tr: 'Altıntaş, Antalya\'da çağdaş bir konut kompleksi — geniş ortak havuz, peyzajlı bahçeler ve sosyal alanlar etrafında düzenlenmiş birden fazla apartman bloğundan oluşuyor.',
     longDesc: 'Altıntaş Konut brings together a series of apartment buildings around a shared outdoor heart: a pool terrace with sun loungers, lush palm landscaping, and a pergola structure that provides shade without enclosure.\n\nThe architecture uses a consistent palette of stone cladding and dark metal joinery across all blocks, creating a coherent ensemble despite the varied heights and orientations of each building.\n\nGround-level amenities and retail line the street, ensuring the development contributes positively to its urban context rather than turning its back on it.',
     longDesc_tr: 'Altıntaş Konut, bir dizi apartman binasını ortak bir dış mekân etrafında bir araya getiriyor: şezlonglu havuz terası, tropikal palmiye peyzajı ve kapalılık hissi vermeden gölge sağlayan pergola.\n\nMimari, tüm bloklarda tutarlı bir taş kaplama ve koyu metal doğrama paleti kullanıyor; her binanın farklı yükseklik ve yönelimlerine karşın uyumlu bir bütün oluşturuyor.\n\nZemin kattaki sosyal alanlar ve mağazalar sokak boyunca uzanarak sitenin kentsel bağlamına katkı sunuyor.',
-    image: '/projects/altintas-antalya/cover.jpg',
+    image: '/projects/altintas-antalya/cover.png',
     images: [
       '/projects/altintas-antalya/01.jpg',
       '/projects/altintas-antalya/02.jpg',
@@ -73,11 +73,12 @@ export const featured = [
   },
 ]
 
-export const caseStudies = [
+export const caseStudies = []
+
+export const thumbs = [
   {
     slug: 'dosemealti-icmimari',
-    id: 1,
-    typeKey: 'residential',
+    typeKey: 'interior',
     name: 'Villa Döşemealtı İç Mimari, Antalya',
     location: 'Antalya',
     year: '2022',
@@ -95,8 +96,7 @@ export const caseStudies = [
   },
   {
     slug: 'masadagi-icmimari',
-    id: 2,
-    typeKey: 'residential',
+    typeKey: 'interior',
     name: 'Masadağı İç Mimari, Antalya',
     location: 'Antalya',
     year: '2023',
@@ -112,9 +112,6 @@ export const caseStudies = [
       '/projects/masadagi-icmimari/04.jpg',
     ],
   },
-]
-
-export const thumbs = [
   {
     slug: 'altinova-antalya',
     typeKey: 'mixed',
@@ -139,7 +136,7 @@ export const thumbs = [
     year: '2023',
     desc: 'A contemporary residential complex in Altıntaş, Antalya — multiple apartment blocks arranged around a generous shared pool, landscaped gardens, and social spaces.',
     desc_tr: 'Altıntaş, Antalya\'da çağdaş bir konut kompleksi — geniş ortak havuz ve peyzajlı bahçeler etrafında düzenlenmiş apartman blokları.',
-    image: '/projects/altintas-antalya/cover.jpg',
+    image: '/projects/altintas-antalya/cover.png',
     images: [
       '/projects/altintas-antalya/01.jpg',
       '/projects/altintas-antalya/02.jpg',
@@ -207,7 +204,7 @@ export const thumbs = [
     desc_tr: 'Duacı, Antalya\'da inşa edilmiş klasik bir villa — beyaz sıvalı kütleler, dekoratif saçaklar, kiremitli kırma çatı ve süslü demir kapılı formel peyzaj bahçesi.',
     longDesc: 'Duacı Villa is a completed residential project that interprets classical European villa architecture within an Antalya context. The building features a tiled hip roof, decorative facade mouldings, and a formal symmetry that references traditional residential typologies.\n\nThe setting is equally considered: a walled garden with manicured planting, a pool visible from the main facade, and ornamental ironwork gates that frame the arrival sequence.',
     longDesc_tr: 'Duacı Villa, klasik Avrupa villa mimarisini Antalya bağlamında yeniden yorumlayan tamamlanmış bir konut projesidir. Bina; kiremitli kırma çatı, dekoratif cephe silmeleri ve geleneksel konut tipolojilerine gönderme yapan formel bir simetri içeriyor.\n\nYerleşim de aynı özenle ele alınmış: bakımlı peyzajlı bahçe, ana cepheden görünen havuz ve varış sekansını çerçeveleyen süslü demir kapılar.',
-    image: '/projects/duaci-villa/cover.jpg',
+    image: '/projects/duaci-villa/cover.png',
     images: [
       '/projects/duaci-villa/01.jpg',
       '/projects/duaci-villa/02.jpg',
