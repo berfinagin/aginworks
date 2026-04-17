@@ -7,9 +7,9 @@
 }
 .headline {
   font-family: var(--font-body);
-  font-size: var(--text-h2);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin-top: 16px;
 }
@@ -31,8 +31,18 @@
   grid-column: span 3;
   cursor: pointer;
   will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cardMeta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .cardImage {
+  flex-shrink: 0;
   width: 100%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
@@ -47,46 +57,56 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--dur-slow) var(--ease-j);
+  transition: transform 0.5s ease;
 }
 .card:hover .parallaxInner img {
-  transform: scale(1.05);
+  transform: scale(1.24);
 }
 .cardType {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   text-transform: uppercase;
   opacity: 0.45;
-  margin-top: 16px;
-  margin-bottom: 4px;
 }
 .cardName {
   font-family: var(--font-body);
   font-size: var(--text-h6);
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  border-bottom: 2px solid transparent;
+  align-self: flex-start;
+  gap: 8px;
+  border-bottom: 1px solid transparent;
   transition: border-color var(--dur-fast) var(--ease-std);
 }
 .card:hover .cardName { border-color: var(--color-black); }
-.icon { font-size: 12px; opacity: 0.5; }
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease-std);
+}
+.card:hover .icon { transform: rotate(45deg); }
 
-.cardCta {
+/* CTA card — no own sizing; stretches with the row via CSS grid */
+.cardCta { /* inherits flex column + gap from .card */ }
+
+/* Inner box — same footprint as .cardImage on sibling cards */
+.cardCtaBox {
+  flex-shrink: 0;
+  aspect-ratio: 9 / 16;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 24px;
+  padding: 28px 24px;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  aspect-ratio: 9 / 16;
   position: relative;
   z-index: 0;
   overflow: hidden;
 }
-/* Stone bar fill — 0 → 100% width on hover, ease-j timing */
-.cardCta::before {
+/* Stone bar fill */
+.cardCtaBox::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -96,10 +116,10 @@
   z-index: -1;
 }
 @media (hover: hover) and (pointer: fine) {
-  .cardCta:hover::before { width: 100%; }
+  .cardCta:hover .cardCtaBox::before { width: 100%; }
 }
-.cardCta:focus-within::before { width: 100%; }
-.cardCta p {
+.cardCta:focus-within .cardCtaBox::before { width: 100%; }
+.cardCtaBox p {
   font-family: var(--font-body);
   font-size: var(--text-h3);
   font-weight: 400;
@@ -115,6 +135,10 @@
   display: block;
 }
 .cardCta:hover .bigArrow { opacity: 1; transform: translate(4px, -4px); }
+@media (hover: hover) and (pointer: fine) {
+  .cardCta:hover .cardCtaBox p,
+  .cardCta:hover .bigArrow { color: #fff; }
+}
 
 @media (max-width: 960px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
@@ -128,21 +152,18 @@
     margin-top: 32px;
   }
   .card { grid-column: span 1; }
-  .cardImage { aspect-ratio: 4 / 3; }
-  .cardType { margin-top: 12px; font-size: 11px; }
+  .cardType { font-size: 11px; }
   .cardName { font-size: 16px; }
-  .cardCta {
-    grid-column: span 1;
+  .cardCta { grid-column: span 1; }
+  .cardCtaBox {
     aspect-ratio: unset;
     height: 80px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 4px;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
   }
-  .cardCta p { font-size: 18px; }
+  .cardCtaBox p { font-size: 18px; }
   .bigArrow { margin-top: 0; font-size: 28px; }
   .headline { margin-top: 12px; }
   .divider { margin-top: 40px; }

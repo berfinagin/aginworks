@@ -1,0 +1,300 @@
+/* Section = the grid container */
+.section {
+  margin-top: 144px;
+}
+@media (max-width: 640px) {
+  .section { margin-top: 48px; }
+}
+
+/* ── Mini heading + heading column ──────────────────────── */
+.colHeading {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  will-change: transform, opacity;
+}
+@media (min-width: 992px) {
+  .colHeading { grid-column: span 6; }
+}
+
+.miniHeading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+}
+.miniLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.heading {
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ── Body text column ────────────────────────────────────── */
+.colText {
+  grid-column: 1 / -1;
+  align-self: end;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  opacity: 0.55;
+  margin-top: 24px;
+  will-change: transform, opacity;
+}
+@media (min-width: 992px) {
+  .colText {
+    grid-column-start: 9;
+    grid-column: span 4;
+    margin-top: 0;
+  }
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  grid-column: 1 / -1;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-top: 32px;
+  margin-bottom: 32px;
+  will-change: transform, opacity;
+}
+@media (min-width: 992px) {
+  .divider { margin-top: 64px; margin-bottom: 64px; }
+}
+
+/* ── Content grid ────────────────────────────────────────── */
+.contentGrid {
+  grid-column: 1 / -1;
+  will-change: transform, opacity;
+}
+
+/* ── Main image area ─────────────────────────────────────── */
+.mainImageArea {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-height: max(1080px, 90dvh);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Parallax wrapper — GSAP moves this */
+.parallaxStack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 110%;
+  top: -5%;
+}
+
+/* Individual image layers */
+.layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2.4s ease;
+}
+.layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.layerActive {
+  opacity: 1;
+  pointer-events: auto;
+  transition-duration: 0.8s;
+}
+
+/* ── Desktop panel ───────────────────────────────────────── */
+.desktopPanel { display: none; }
+@media (min-width: 992px) {
+  .desktopPanel {
+    display: block;
+    grid-column: 10 / span 3;
+    grid-row: 1;
+    padding: 0 24px 21px 0;
+    position: relative;
+    z-index: 20;
+    align-self: end;
+  }
+}
+
+/* Swatch row: label | swatch grid */
+.swatchListPanel {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-off-white);
+  color: rgba(14, 14, 14, 0.6);
+}
+.swatchLabel {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  margin-right: 16px;
+  padding-right: 16px;
+  border-right: 1px solid var(--color-border);
+}
+
+/* 5-col grid = 2 rows for 10 swatches */
+.swatchGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.swatchItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swatchBtn {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 0.2s;
+}
+.swatchActive .swatchBtn {
+  outline-color: var(--color-black);
+}
+
+/* Texture strip */
+.colourStrip {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.stripLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2.4s ease;
+}
+.stripLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stripLayerActive {
+  opacity: 1;
+  transition-duration: 0.8s;
+}
+.nameBadge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 4px 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  background-color: var(--color-off-white);
+  color: var(--color-black);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Mobile panel ────────────────────────────────────────── */
+.mobilePanel {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid var(--color-border);
+  margin-top: 16px;
+}
+@media (min-width: 992px) {
+  .mobilePanel { display: none; }
+}
+
+.mobileToggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 68px;
+  padding: 0 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(14, 14, 14, 0.6);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.mobileToggleIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.mobileExpanded {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.8s ease;
+}
+.mobileExpandedOpen { max-height: 600px; }
+
+.mobileSwatchGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px 8px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+  margin: 0;
+}
+
+.mobileColourStrip {
+  aspect-ratio: 341 / 117;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .colHeading, .colText, .divider, .contentGrid {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+  .layer, .stripLayer { transition: none !important; }
+  .parallaxStack       { transform: none !important; }
+}

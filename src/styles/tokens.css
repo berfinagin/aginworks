@@ -1,43 +1,91 @@
-/* ─────────────────────────────────────────
+/* ─────────────────────────────────────────────────────────────
    DESIGN TOKENS — Jonite Typography System
-───────────────────────────────────────── */
+   Fonts: PP Neue Montreal (sans) + Silka Mono (mono)
+   Weight 400 only — hierarchy achieved through size, not weight.
+   Proxies: Inter → PP Neue Montreal  |  JetBrains Mono → Silka Mono
+   Replace proxy entries once licensed fonts are self-hosted under
+   /public/fonts/ and @font-face declarations are added here.
+───────────────────────────────────────────────────────────── */
+
+/* ── @font-face — self-hosted licensed fonts ── */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src:
+    url("/fonts/PPNeueMontreal-Regular.woff") format("woff"),
+    url("/fonts/PPNeueMontreal-Regular.otf")  format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silka Mono";
+  src:
+    url("/fonts/SilkaMono-Regular.woff2") format("woff2"),
+    url("/fonts/SilkaMono-Regular.woff")  format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* ── Colors ── */
-  --color-black:          rgb(14, 14, 14);          /* #0E0E0E — primary text */
-  --color-black-60:       rgba(14, 14, 14, 0.6);    /* muted / secondary text */
-  --color-black-20:       rgba(14, 14, 14, 0.2);    /* borders, dividers */
-  --color-off-white:      rgb(230, 231, 232);       /* #E6E7E8 — text on dark bg */
-  --color-off-white-60:   rgba(230, 231, 232, 0.6); /* muted text on dark bg */
-  --color-stone:          rgb(104, 101, 99);        /* #686563 — accent / badges */
-  --color-warm-stone:     rgb(121, 119, 98);
-  --color-white:          rgb(255, 255, 255);       /* buttons on black */
-  --color-bg:             rgb(230, 231, 232);       /* #E6E7E8 — page background */
-  --color-bg-dark:        rgb(14, 14, 14);          /* #0E0E0E — dark sections */
+  --color-black:          rgb(14, 14, 14);           /* #0E0E0E */
+  --color-black-60:       rgba(14, 14, 14, 0.6);
+  --color-black-40:       rgba(14, 14, 14, 0.4);
+  --color-black-20:       rgba(14, 14, 14, 0.2);
+  --color-white:          rgb(255, 255, 255);
+  --color-off-white:      rgb(230, 231, 232);        /* #E6E7E8 */
+  --color-off-white-60:   rgba(230, 231, 232, 0.6);
+  --color-cream:          rgb(201, 190, 181);        /* #C9BEB5 */
+  --color-stone:          rgb(104, 101, 99);         /* #686563 */
+  --color-warm-stone:     rgb(121, 119, 98);         /* #797762 — sage */
+  --color-bg:             rgb(230, 231, 232);
+  --color-bg-dark:        rgb(14, 14, 14);
   --color-border:         rgba(14, 14, 14, 0.20);
   --color-border-light:   rgba(14, 14, 14, 0.08);
 
-  /* ── Font families ── */
-  /* PP Neue Montreal proxy → Inter (replace with licensed font in production) */
-  --font-pp:    "Inter", "PP Neue Montreal", "Helvetica Neue", sans-serif;
-  /* Silka Mono proxy → JetBrains Mono (replace with licensed font in production) */
-  --font-mono:  "JetBrains Mono", "Silka Mono", "Courier New", monospace;
-  /* Aliases kept for backward compatibility */
-  --font-body:  var(--font-pp);
+  /* ── Font families — self-hosted licensed fonts ── */
+  --font-pp:   "PP Neue Montreal", "Helvetica Neue", sans-serif;
+  --font-mono: "Silka Mono", "Courier New", monospace;
+  --font-body: var(--font-pp); /* alias */
 
-  /* ── Typography scale (Jonite) ── */
-  --text-display: clamp(48px, 12vw, 150px);
-  --text-h1:      4rem;         /* 64px */
-  --text-h2:      3rem;         /* 48px */
-  --text-h2-sm:   2rem;         /* 32px — maps to h3 range */
-  --text-h3:      2rem;         /* 32px */
-  --text-h4:      1.5rem;       /* 24px */
-  --text-h5:      1.25rem;      /* 20px */
-  --text-h6:      1rem;         /* 16px */
-  --text-body:    1rem;         /* 16px */
-  --text-btn:     0.938rem;     /* 15px */
-  --text-nav:     0.875rem;     /* 14px */
-  --text-caps:    0.75rem;      /* 12px */
-  --text-micro:   0.688rem;     /* 11px */
+  /* ── Display title scale (Jonite) ── */
+  --text-xxl:     8.75rem;  /* 140px */
+  --text-xl:      7rem;     /* 112px */
+  --text-l:       5rem;     /* 80px  */
+  --text-display: clamp(48px, 12vw, 150px); /* legacy alias */
+
+  /* ── Heading scale (Jonite) ── */
+  --text-h1:    4rem;       /* 64px  */
+  --text-h2:    3rem;       /* 48px  */
+  --text-h2-sm: 2rem;       /* 32px  — kept for backward compat */
+  --text-h3:    2rem;       /* 32px  */
+  --text-h4:    1.5rem;     /* 24px  */
+  --text-h5:    1.25rem;    /* 20px  */
+  --text-h6:    1rem;       /* 16px  — kept for backward compat */
+
+  /* ── Body scale ── */
+  --text-body:  1rem;       /* 16px  */
+  --text-btn:   0.938rem;   /* 15px  */
+
+  /* ── Mono / caps scale (Jonite) ── */
+  --text-nav:   0.875rem;   /* 14px  */
+  --text-caps:  0.75rem;    /* 12px  */
+  --text-micro: 0.688rem;   /* 11px  */
+
+  /* ── Mobile type scale (Jonite — applied at ≤991px) ── */
+  --text-xxl-m:   3rem;       /* 48px  */
+  --text-xl-m:    2.875rem;   /* 46px  */
+  --text-l-m:     2.75rem;    /* 44px  */
+  --text-h1-m:    1.75rem;    /* 28px  */
+  --text-h2-m:    1.5rem;     /* 24px  */
+  --text-h3-m:    1.375rem;   /* 22px  */
+  --text-h4-m:    1.25rem;    /* 20px  */
+  --text-h5-m:    1.125rem;   /* 18px  */
+  --text-body-m:  0.938rem;   /* 15px  */
+  --text-nav-m:   1rem;       /* 16px  */
+  --text-caps-m:  0.688rem;   /* 11px  */
 
   /* ── Grid ── */
   --grid-gap:      21.3px;
@@ -67,6 +115,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-black);
   font-size: var(--text-body);
+  font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   scrollbar-gutter: stable;
@@ -75,9 +124,40 @@ body {
 a  { text-decoration: none; color: inherit; }
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-/* ─── TYPOGRAPHY CLASSES ─── */
+/* ═══════════════════════════════════════════════════════════
+   DISPLAY TITLES — PP Neue Montreal · weight 400 · lh 100%
+   Desktop classes set full size; apply .mobile-* at ≤991px
+   if you need static-size building blocks.
+═══════════════════════════════════════════════════════════ */
 
-/* PP Neue Montreal (headings & body) */
+.xxl-title,
+.mobile-xxl-title {
+  font-family: var(--font-pp);
+  font-weight: 400;
+  line-height: 100%;
+}
+.xxl-title        { font-size: var(--text-xxl); }     /* 140px */
+.mobile-xxl-title { font-size: var(--text-xxl-m); }   /* 48px  */
+
+.xl-title,
+.mobile-xl-title {
+  font-family: var(--font-pp);
+  font-weight: 400;
+  line-height: 100%;
+}
+.xl-title         { font-size: var(--text-xl); }      /* 112px */
+.mobile-xl-title  { font-size: var(--text-xl-m); }    /* 46px  */
+
+.l-title,
+.mobile-l-title {
+  font-family: var(--font-pp);
+  font-weight: 400;
+  line-height: 100%;
+}
+.l-title          { font-size: var(--text-l); }       /* 80px  */
+.mobile-l-title   { font-size: var(--text-l-m); }     /* 44px  */
+
+/* Legacy display class (used in Editorial.jsx via CSS module var) */
 .display {
   font-family: var(--font-pp);
   font-size: var(--text-display);
@@ -86,41 +166,67 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   letter-spacing: normal;
 }
 
-.h1 {
-  font-family: var(--font-pp);
-  font-size: var(--text-h1);
-  font-weight: 400;
-  line-height: 120%;
-}
+/* ═══════════════════════════════════════════════════════════
+   HEADINGS — PP Neue Montreal · weight 400
+═══════════════════════════════════════════════════════════ */
 
-.h2 {
+.h1,
+.mobile-h1 {
   font-family: var(--font-pp);
-  font-size: var(--text-h2);
   font-weight: 400;
   line-height: 120%;
 }
+.h1        { font-size: var(--text-h1); }              /* 64px */
+.mobile-h1 { font-size: var(--text-h1-m); }           /* 28px */
+
+.h2,
+.mobile-h2 {
+  font-family: var(--font-pp);
+  font-weight: 400;
+}
+.h2        { font-size: var(--text-h2);   line-height: 120%; }  /* 48px */
+.mobile-h2 { font-size: var(--text-h2-m); line-height: 110%; }  /* 24px */
 
 .h3 {
   font-family: var(--font-pp);
-  font-size: var(--text-h3);
+  font-size: var(--text-h3);  /* 32px */
   font-weight: 400;
   line-height: 120%;
 }
-
-.h4 {
+.h3-140 {
   font-family: var(--font-pp);
-  font-size: var(--text-h4);
+  font-size: var(--text-h3);  /* 32px */
+  font-weight: 400;
+  line-height: 140%;
+}
+.mobile-h3,
+.mobile-h3-130 {
+  font-family: var(--font-pp);
+  font-size: var(--text-h3-m); /* 22px */
+  font-weight: 400;
+}
+.mobile-h3     { line-height: 120%; }
+.mobile-h3-130 { line-height: 130%; }
+
+.h4,
+.mobile-h4 {
+  font-family: var(--font-pp);
   font-weight: 400;
   line-height: 130%;
 }
+.h4        { font-size: var(--text-h4); }  /* 24px */
+.mobile-h4 { font-size: var(--text-h4-m); }/* 20px */
 
-.h5 {
+.h5,
+.mobile-h5 {
   font-family: var(--font-pp);
-  font-size: var(--text-h5);
   font-weight: 400;
   line-height: 130%;
 }
+.h5        { font-size: var(--text-h5); }  /* 20px */
+.mobile-h5 { font-size: var(--text-h5-m); }/* 18px */
 
+/* Legacy h6 alias */
 .h6 {
   font-family: var(--font-pp);
   font-size: var(--text-h6);
@@ -128,13 +234,20 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   line-height: 110%;
 }
 
-.paragraph {
+/* ═══════════════════════════════════════════════════════════
+   BODY / PARAGRAPH — PP Neue Montreal · weight 400 · lh 150%
+═══════════════════════════════════════════════════════════ */
+
+.paragraph,
+.mobile-paragraph {
   font-family: var(--font-pp);
-  font-size: var(--text-body);
   font-weight: 400;
   line-height: 150%;
 }
+.paragraph        { font-size: var(--text-body); }    /* 16px */
+.mobile-paragraph { font-size: var(--text-body-m); }  /* 15px */
 
+/* Legacy alias */
 .text-button {
   font-family: var(--font-pp);
   font-size: var(--text-btn);
@@ -142,48 +255,79 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   line-height: 110%;
 }
 
-/* Silka Mono (navigation, labels, caps) */
-.nav {
+/* ═══════════════════════════════════════════════════════════
+   LABELS & CAPS — Silka Mono · weight 400 · text-transform: uppercase
+═══════════════════════════════════════════════════════════ */
+
+.all-caps,
+.mobile-all-caps {
   font-family: var(--font-mono);
-  font-size: var(--text-nav);
   font-weight: 400;
-  line-height: 114%;
+  line-height: 110%;
   text-transform: uppercase;
-  letter-spacing: 0;
+}
+.all-caps        { font-size: var(--text-caps); }     /* 12px */
+.mobile-all-caps { font-size: var(--text-caps-m); }   /* 11px */
+
+.all-caps-paragraph,
+.mobile-all-caps-paragraph {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+.all-caps-paragraph        { font-size: var(--text-caps); }   /* 12px */
+.mobile-all-caps-paragraph { font-size: var(--text-caps-m); } /* 11px */
+
+.all-caps-link,
+.mobile-all-caps-link {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.all-caps-link        { font-size: var(--text-caps); }    /* 12px */
+.mobile-all-caps-link { font-size: var(--text-caps-m); }  /* 11px */
+
+.nav,
+.mobile-nav {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  line-height: 114.285%;
+  text-transform: uppercase;
+}
+.nav        { font-size: var(--text-nav); }    /* 14px desktop */
+.mobile-nav { font-size: var(--text-nav-m); }  /* 16px mobile  */
+
+/* mini-heading — Silka Mono label inside rich-text / section blocks */
+.mini-heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro); /* 11px — same on all breakpoints */
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
+/* Legacy aliases */
 .mono {
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
-.all-caps {
-  font-family: var(--font-mono);
-  font-size: var(--text-caps);
-  font-weight: 400;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-
-.all-caps-paragraph {
-  font-family: var(--font-mono);
-  font-size: var(--text-caps);
-  font-weight: 400;
-  line-height: 130%;
-  text-transform: uppercase;
-}
-
 /* ─── COLOR UTILITIES ─── */
 .text-black        { color: var(--color-black); }
 .text-black-60     { color: var(--color-black-60); }
+.text-black-40     { color: var(--color-black-40); }
 .text-black-20     { color: var(--color-black-20); }
+.text-white        { color: var(--color-white); }
 .text-off-white    { color: var(--color-off-white); }
 .text-off-white-60 { color: var(--color-off-white-60); }
+.text-cream        { color: var(--color-cream); }
 .text-stone        { color: var(--color-stone); }
-.text-white        { color: var(--color-white); }
+.text-sage         { color: var(--color-warm-stone); }
 
-/* ─── UTILITY ─── */
+/* ─── LAYOUT UTILITIES ─── */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -199,27 +343,34 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   column-gap: var(--grid-gap);
 }
 
+/* ─── SECTION LABEL ─── */
+/* Dot + mono caps — used across components */
 .section-label {
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: var(--text-micro);
+  font-size: var(--text-caps); /* 12px */
+  font-weight: 400;
+  line-height: 110%;
   text-transform: uppercase;
-  opacity: 0.55;
 }
 .section-label::before {
   content: '';
   display: inline-block;
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--color-black);
+  background: currentColor;
   flex-shrink: 0;
 }
 
+/* ─── LINK ARROW ─── */
 .link-arrow {
   font-family: var(--font-mono);
   font-size: var(--text-caps);
+  font-weight: 400;
+  line-height: 110%;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -230,31 +381,56 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .link-arrow::after { content: '↗'; font-size: 12px; }
 .link-arrow:hover  { opacity: 1; }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 960px) {
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Jonite mobile breakpoint: ≤991px
+   Desktop classes become responsive automatically.
+   .mobile-* classes remain at their static size always.
+═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 991px) {
+  /* Display titles → mobile sizes */
+  .xxl-title   { font-size: var(--text-xxl-m); }  /* 48px */
+  .xl-title    { font-size: var(--text-xl-m); }   /* 46px */
+  .l-title     { font-size: var(--text-l-m); }    /* 44px */
+
+  /* Headings → mobile sizes */
+  .h1          { font-size: var(--text-h1-m); }   /* 28px */
+  .h2          { font-size: var(--text-h2-m); line-height: 110%; }  /* 24px */
+  .h3,
+  .h3-140      { font-size: var(--text-h3-m); }   /* 22px */
+  .h4          { font-size: var(--text-h4-m); }   /* 20px */
+  .h5          { font-size: var(--text-h5-m); }   /* 18px */
+
+  /* Body → mobile */
+  .paragraph   { font-size: var(--text-body-m); } /* 15px */
+
+  /* Mono / caps → mobile */
+  .nav                   { font-size: var(--text-nav-m); }   /* 16px */
+  .all-caps              { font-size: var(--text-caps-m); }  /* 11px */
+  .all-caps-paragraph    { font-size: var(--text-caps-m); }
+  .all-caps-link         { font-size: var(--text-caps-m); }
+
+  /* CSS variable overrides (for module files that use var(--text-*)) */
   :root {
+    --text-h1:    var(--text-h1-m);    /* 1.75rem */
+    --text-h2:    var(--text-h2-m);    /* 1.5rem  */
+    --text-h2-sm: var(--text-h3-m);    /* 1.375rem */
+    --text-h3:    var(--text-h3-m);    /* 1.375rem */
+    --text-h4:    var(--text-h4-m);    /* 1.25rem  */
+    --text-h5:    var(--text-h5-m);    /* 1.125rem */
+    --text-body:  var(--text-body-m);  /* 0.938rem */
+    --text-nav:   var(--text-nav-m);   /* 1rem     */
+    --text-caps:  var(--text-caps-m);  /* 0.688rem */
     --text-display: clamp(48px, 10vw, 100px);
-    --text-h1:      2.5rem;   /* ~40px */
-    --text-h2:      2rem;     /* 32px */
-    --text-h2-sm:   1.75rem;
   }
 }
 
 @media (max-width: 640px) {
   :root {
-    --text-display: clamp(48px, 13vw, 80px);
-    --text-h1:      1.75rem;  /* 28px */
-    --text-h2:      1.5rem;   /* 24px */
-    --text-h2-sm:   1.375rem;
-    --text-h3:      1.375rem; /* 22px */
-    --text-h4:      1.25rem;  /* 20px */
-    --text-h5:      1.125rem; /* 18px */
-    --text-h6:      0.875rem; /* 14px */
-    --text-body:    0.938rem; /* 15px */
-    --text-btn:     0.875rem; /* 14px */
-    --text-nav:     1rem;     /* 16px — larger on mobile per Jonite spec */
-    --text-caps:    0.688rem; /* 11px */
-    --text-micro:   0.625rem; /* 10px */
+    --text-display:  clamp(48px, 13vw, 80px);
+    --text-h6:       0.875rem;    /* 14px */
+    --text-btn:      0.875rem;    /* 14px */
+    --text-micro:    0.625rem;    /* 10px */
     --container-pad: 20px;
   }
 }

@@ -180,16 +180,11 @@
   padding-top: 80px;
   padding-bottom: 120px;
 }
-.servicesTitle {
-  font-family: var(--font-body);
-  font-size: clamp(48px, 8vw, 120px);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
+.services :global(.section-label) {
   color: var(--color-white);
-  margin-bottom: 64px;
 }
 .servicesList {
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
 }
@@ -233,7 +228,6 @@
   .approach { margin-top: 56px; padding-top: 40px; }
   .services { margin-top: 56px; }
   .servicesInner { padding-top: 48px; padding-bottom: 64px; }
-  .servicesTitle { margin-bottom: 32px; }
 
   /* Intro: text first, image below as a short landscape strip */
   .introGrid { display: flex; flex-direction: column; gap: 32px; }

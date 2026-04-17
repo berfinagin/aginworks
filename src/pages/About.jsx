@@ -19,7 +19,7 @@ export default function About() {
         <div className={styles.introGrid}>
           <div className={styles.introImage}>
             <img
-              src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1200&q=80"
+              src="/about.jpg"
               alt="Studio"
             />
           </div>
@@ -81,7 +81,7 @@ export default function About() {
       {/* ── SERVICES ── */}
       <section className={styles.services}>
         <div className={`${styles.servicesInner} container`}>
-          <h2 className={styles.servicesTitle}>HİZMETLER</h2>
+          <span className="section-label">HİZMETLER</span>
           <div className={styles.servicesList}>
             {a.services.map((s, i) => (
               <div className={styles.serviceItem} key={i}>

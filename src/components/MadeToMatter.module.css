@@ -73,9 +73,9 @@
 .body {
   flex-shrink: 0;
   width: 250px;
-  font-size: var(--text-micro);
-  line-height: 1.6;
-  color: rgba(14, 14, 14, 0.6);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--color-black-60);
   will-change: transform;
 }
 

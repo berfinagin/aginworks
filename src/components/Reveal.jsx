@@ -14,16 +14,16 @@ export default function Reveal({ children, delay = 0 }) {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.6,
-          ease: 'in-j',
+          duration: 0.9,
+          ease: 'power2.out',
           delay,
           scrollTrigger: {
             trigger: el,
-            start: 'top 88%',
+            start: 'top 95%',
             toggleActions: 'play none none none',
             once: true,
           },

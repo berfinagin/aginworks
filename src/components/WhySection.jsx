@@ -1,5 +1,10 @@
+import { useEffect, useRef } from 'react'
 import { useLang } from '../contexts/LanguageContext'
 import styles from './WhySection.module.css'
+import { gsap, ScrollTrigger } from '../utils/gsapSetup'
+import Swiper from 'swiper'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
 
 const icons = {
   site: (
@@ -39,26 +44,83 @@ const icons = {
 }
 
 export default function WhySection() {
+  const sectionRef    = useRef(null)
+  const miniHeadRef   = useRef(null)
+  const headingRef    = useRef(null)
+  const textRef       = useRef(null)
+  const carouselRef   = useRef(null)
+  const swiperRef     = useRef(null)
+
   const { t, toUpper } = useLang()
   const w = t.why
 
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const isDesktop      = window.matchMedia('(min-width: 992px)').matches
+
+    if (!prefersReduced) {
+      const tl = gsap.timeline({
+        defaults: { ease: 'power2.out', duration: 1 },
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+          once: true,
+        },
+      })
+
+      tl.fromTo(miniHeadRef.current, { y: isDesktop ? 60 : 30, opacity: 0 }, { y: 0, opacity: 1 }, 0)
+      tl.fromTo(headingRef.current,  { y: isDesktop ? 80 : 40, opacity: 0 }, { y: 0, opacity: 1 }, 0.08)
+      tl.fromTo(textRef.current,     { y: isDesktop ? 80 : 40, opacity: 0 }, { y: 0, opacity: 1 }, 0.16)
+      tl.fromTo(carouselRef.current, { y: isDesktop ? 80 : 40, opacity: 0 }, { y: 0, opacity: 1 }, 0.24)
+    }
+
+    swiperRef.current = new Swiper(carouselRef.current, {
+      modules: [Autoplay],
+      slidesPerView: 'auto',
+      loop: true,
+      speed: 4000,
+      navigation: false,
+      pagination: false,
+      spaceBetween: 0,
+      centeredSlides: false,
+      autoplay: { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false },
+    })
+
+    return () => {
+      swiperRef.current?.destroy()
+    }
+  }, [])
+
   return (
-    <section className={`${styles.section} container`}>
-      <div className={styles.top}>
-        <div className={styles.topLeft}>
-          <span className="section-label">{toUpper(w.label)}</span>
-          <h2 className={styles.heading}>{w.heading}</h2>
+    <section
+      ref={sectionRef}
+      className={styles.section}
+      style={{ '--swiper-wrapper-transition-timing-function': 'linear' }}
+    >
+      <div className={`container ${styles.textBlock}`}>
+        <div ref={miniHeadRef} className={styles.miniHeading}>
+          <span className={styles.dot} />
+          <span className={styles.miniLabel}>{toUpper(w.label)}</span>
         </div>
-        <p className={styles.body}>{w.body}</p>
+
+        <h2 ref={headingRef} className={styles.heading}>
+          {w.heading}
+        </h2>
+
+        <div ref={textRef} className={styles.body}>
+          <p>{w.body}</p>
+        </div>
       </div>
 
-      <div className={styles.pillars}>
-        {w.pillars.map((p) => (
-          <div className={styles.pillar} key={p.icon}>
-            <div className={styles.pillarIcon}>{icons[p.icon]}</div>
-            <span className={styles.pillarLabel}>{toUpper(p.label)}</span>
-          </div>
-        ))}
+      <div ref={carouselRef} className={`swiper ${styles.carousel}`}>
+        <div className="swiper-wrapper">
+          {[...w.pillars, ...w.pillars, ...w.pillars].map((p, i) => (
+            <div className={`swiper-slide ${styles.slide}`} key={`${p.icon}-${i}`}>
+              <div className={styles.slideIcon}>{icons[p.icon]}</div>
+              <span className={styles.slideLabel}>{toUpper(p.label)}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

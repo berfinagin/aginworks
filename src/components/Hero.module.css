@@ -75,7 +75,7 @@
 /* ─── Left Image Box ────────────────────────────────────────── */
 .leftBox {
   width: 100%;
-  height: calc(50dvh - 8px);   /* ~half the right image height, bottom-aligned */
+  height: calc(44dvh - 8px);   /* left image height */
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
@@ -90,12 +90,14 @@
 .right {
   display: flex;
   flex-direction: column;
+  padding-right: 24px;
   /* no top padding — image starts from very top of viewport */
 }
 
 /* ─── Right Image Box ───────────────────────────────────────── */
 .rightBox {
-  flex: 1;                      /* fills full right column height */
+  height: 83dvh;
+  margin-top: auto;             /* push to bottom so it aligns with left image */
   position: relative;
   overflow: hidden;
   clip-path: polygon(

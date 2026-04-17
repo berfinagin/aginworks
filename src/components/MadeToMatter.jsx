@@ -1,15 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { gsap, ScrollTrigger } from '../utils/gsapSetup'
+import { useLang } from '../contexts/LanguageContext'
 import styles from './MadeToMatter.module.css'
 
 const IMAGES = [
-  { src: '/projects/altinova-antalya/cover.jpg',  alt: 'Altınova Residence, Antalya' },
-  { src: '/projects/altintas-antalya/cover.jpg',  alt: 'Altıntaş Konut, Antalya' },
-  { src: '/projects/dosemealti-villa/cover.jpg',  alt: 'Döşemealtı Villa' },
-  { src: '/projects/altinova-antalya/01.jpg',     alt: 'Architectural detail' },
+  { src: '/projects/duaci-villa/03.png',        alt: 'Duacı Villa, Antalya' },
+  { src: '/projects/masadagi-antalya/06.jpg',   alt: 'Masadağı Konut, Antalya' },
+  { src: '/projects/dosemealti-villa/04.jpg',   alt: 'Döşemealtı Villa' },
+  { src: '/projects/altintas-antalya/09.png',   alt: 'Altıntaş Konut, Antalya' },
 ]
 
 export default function MadeToMatter() {
+  const { t } = useLang()
+  const m = t.madeToMatter
   const sectionRef       = useRef(null)
   const imagesRef        = useRef(null)
   const textContainerRef = useRef(null)
@@ -120,13 +123,13 @@ export default function MadeToMatter() {
       <div ref={textContainerRef} className={styles.textContainer}>
 
         <h2 className={styles.heading}>
-          <span ref={el => { wordRefs.current[0] = el }} className={styles.word}>Built</span>
-          <span ref={el => { wordRefs.current[1] = el }} className={styles.word}>to</span>
-          <span ref={el => { wordRefs.current[2] = el }} className={styles.word}>last</span>
+          <span ref={el => { wordRefs.current[0] = el }} className={styles.word}>{m.words[0]}</span>
+          <span ref={el => { wordRefs.current[1] = el }} className={styles.word}>{m.words[1]}</span>
+          <span ref={el => { wordRefs.current[2] = el }} className={styles.word}>{m.words[2]}</span>
         </h2>
 
         <p ref={bodyRef} className={styles.body}>
-          Architecture that shapes living — precision-built from the ground up.
+          {m.body}
         </p>
 
       </div>

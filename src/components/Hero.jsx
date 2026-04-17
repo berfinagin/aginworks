@@ -107,7 +107,7 @@ export default function Hero() {
           <div className={styles.slide}>
             <img
               ref={el => { allImgRefs.current[0] = el }}
-              src="/projects/altintas-antalya/cover.jpg"
+              src="/projects/altinova-antalya/09.png"
               alt="Architectural project"
             />
           </div>
@@ -125,21 +125,21 @@ export default function Hero() {
           <div ref={el => { slideRefs.current[0] = el }} className={styles.slide}>
             <img
               ref={el => { allImgRefs.current[1] = el }}
-              src="/projects/altinova-antalya/cover.jpg"
+              src="/projects/altinova-antalya/05.png"
               alt="Slide 1"
             />
           </div>
           <div ref={el => { slideRefs.current[1] = el }} className={`${styles.slide} ${styles.slideHidden}`}>
             <img
               ref={el => { allImgRefs.current[2] = el }}
-              src="/projects/dosemealti-villa/cover.jpg"
+              src="/projects/altinova-antalya/02.png"
               alt="Slide 2"
             />
           </div>
           <div ref={el => { slideRefs.current[2] = el }} className={`${styles.slide} ${styles.slideHidden}`}>
             <img
               ref={el => { allImgRefs.current[3] = el }}
-              src="/projects/altintas-antalya/01.jpg"
+              src="/projects/altinova-antalya/07.png"
               alt="Slide 3"
             />
           </div>

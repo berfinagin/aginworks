@@ -27,21 +27,21 @@ export default function ProjectsGrid() {
     if (prefersReduced) return
 
     const ctx = gsap.context(() => {
-      // ── Initial states (Jonite pattern) ─────────────────────────────────
-      gsap.set(headlineRef.current,        { y: 209, opacity: 0 })
-      gsap.set(dividerRef.current,         { y: 249, opacity: 0 })
-      gsap.set(gridRef.current,            { y: 289, opacity: 0 })
-      gsap.set(cardRefs.current.filter(Boolean), { y: '10%', opacity: 0 })
+      // ── Initial states ───────────────────────────────────────────────────
+      gsap.set(headlineRef.current,              { y: 40, opacity: 0 })
+      gsap.set(dividerRef.current,               { y: 40, opacity: 0 })
+      gsap.set(gridRef.current,                  { y: 40, opacity: 0 })
+      gsap.set(cardRefs.current.filter(Boolean), { y: 40, opacity: 0 })
 
       // ── Entrance timeline ────────────────────────────────────────────────
       const tl = gsap.timeline({
         paused: true,
-        defaults: { ease: 'in-j', duration: 2.2 },
+        defaults: { ease: 'power3.out', duration: 1.0 },
       })
-      tl.to(headlineRef.current,               { y: 0, opacity: 1 }, 0)
-      tl.to(dividerRef.current,                { y: 0, opacity: 1 }, 0)
-      tl.to(gridRef.current,                   { y: 0, opacity: 1 }, 0)
-      tl.to(cardRefs.current.filter(Boolean),  { y: 0, opacity: 1, stagger: 0.1 }, 0)
+      tl.to(headlineRef.current,               { y: 0, opacity: 1 },              0)
+      tl.to(dividerRef.current,                { y: 0, opacity: 1 },              0.05)
+      tl.to(gridRef.current,                   { y: 0, opacity: 1 },              0.1)
+      tl.to(cardRefs.current.filter(Boolean),  { y: 0, opacity: 1, stagger: 0.07 }, 0.1)
 
       ScrollTrigger.create({
         trigger: section,
@@ -100,16 +100,17 @@ export default function ProjectsGrid() {
             ref={el => { cardRefs.current[i] = el }}
             onClick={() => navigate(`/projects/${proj.slug}`)}
           >
+            <div className={styles.cardMeta}>
+              <p className={styles.cardType}>{toUpper(p.types[proj.typeKey])}</p>
+              <p className={styles.cardName}>
+                {proj.name} <span className={styles.icon}><ArrowUpRight size={14} /></span>
+              </p>
+            </div>
             <div className={styles.cardImage}>
-              {/* Wrapper div receives GSAP parallax — img CSS hover scale is unaffected */}
               <div className={styles.parallaxInner}>
                 <img src={proj.image} alt={proj.name} />
               </div>
             </div>
-            <p className={styles.cardType}>{toUpper(p.types[proj.typeKey])}</p>
-            <p className={styles.cardName}>
-              {proj.name} <span className={styles.icon}><ArrowUpRight size={11} /></span>
-            </p>
           </div>
         ))}
 
@@ -119,8 +120,12 @@ export default function ProjectsGrid() {
           onClick={() => navigate('/projects')}
           style={{ cursor: 'pointer' }}
         >
-          <p>{p.cta}</p>
-          <span className={styles.bigArrow}><ArrowUpRight size={40} /></span>
+          {/* empty spacer — matches .cardMeta flex:1 on regular cards */}
+          <div className={styles.cardMeta} aria-hidden="true" />
+          <div className={styles.cardCtaBox}>
+            <p>{p.cta}</p>
+            <span className={styles.bigArrow}><ArrowUpRight size={40} /></span>
+          </div>
         </div>
       </div>
     </section>
