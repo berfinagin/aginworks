@@ -42,8 +42,9 @@ const translations = {
       ctaHero: 'Explore work',
     },
     marquee: {
-      label: 'Collaborators',
-      desc: "For 10+ years, we've collaborated with award-winning developers, institutions and cultural bodies.",
+      label: 'Clients',
+      desc: "For 10+ years, we've collaborated with award-winning architects, developers and global brands.",
+      cta: 'Get in touch',
     },
     editorial: {
       line1: 'Ongoing',
@@ -206,8 +207,9 @@ const translations = {
       ctaHero: 'İşleri keşfet',
     },
     marquee: {
-      label: 'İş Birlikleri',
-      desc: '10+ yıldır ödüllü geliştiriciler, kurumlar ve kültürel kuruluşlarla iş birliği yapıyoruz.',
+      label: 'Müşteriler',
+      desc: '10+ yıldır ödüllü mimarlar, geliştiriciler ve global markalarla iş birliği yapıyoruz.',
+      cta: 'İletişime geç',
     },
     editorial: {
       line1: 'Devam',

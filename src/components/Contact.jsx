@@ -6,9 +6,9 @@ export default function Contact() {
   const c = t.contact
 
   return (
-    <section className={`${styles.section} site-grid container`} id="contact">
+    <section className={styles.wrapper} id="contact">
+    <div className={`${styles.section} site-grid container`}>
       <div className={styles.heading}>
-        <span className="section-label">{toUpper(c.label)}</span>
         <h2>{c.heading}</h2>
       </div>
       <div className={styles.details}>
@@ -27,6 +27,7 @@ export default function Contact() {
           ))}</p>
         </div>
       </div>
+    </div>
     </section>
   )
 }

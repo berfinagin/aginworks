@@ -1,80 +1,138 @@
+/* ─── Hero ─────────────────────────────────────────────────── */
 .hero {
-  margin-top: 80px;
-  padding-top: 48px;
-  min-height: calc(100dvh - 80px);
-  max-height: 709px;
-  padding-bottom: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  min-height: 100dvh;
+  padding: 136px 0 16px 0;  /* 80px header + 56px gap below navbar */
 }
+
+/* ─── Left Column ───────────────────────────────────────────── */
 .left {
-  grid-column: span 6;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  padding-top: 40px;
-  gap: 0;
+  padding: 0 16px 0 24px;
 }
-.tagline {
-  font-family: var(--font-body);
-  font-size: var(--text-h5);
-  font-weight: 400;
-  line-height: 1.3;
-  max-width: 300px;
-  margin-top: 48px;
-  margin-left: auto;
-  margin-right: 32px;
-  text-align: right;
+
+.headlineClip {
   overflow: hidden;
+  margin-top: 56px;
+  margin-left: auto;
+  margin-right: 22%;   /* shift a little left */
+  max-width: 340px;    /* wide enough for 2 lines */
 }
-.taglineInner {
-  display: block;
+
+.headline {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  transform: translateY(100%);
 }
+
+/* ─── Meta block ────────────────────────────────────────────── */
 .meta {
-  margin-top: auto;
-  padding-top: 40px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 32px;
-  align-items: end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;   /* pushes meta + image to bottom of left column */
+  margin-bottom: 24px;
 }
-.metaBlock p {
+
+.metaCols {
+  display: flex;
+  gap: 48px;
+}
+
+.metaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaCol p {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   text-transform: uppercase;
-  line-height: 1.7;
+  letter-spacing: 0.04em;
   opacity: 0.6;
+  line-height: 1.7;
 }
+
+.metaCity {
+  opacity: 1 !important;
+}
+
 .est {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   opacity: 0.45;
-  justify-self: end;
-}
-.imageWrap {
-  position: relative;
-  overflow: hidden;
-  flex: 1;
-  min-height: 260px;
-  margin-top: 24px;
-}
-.imageWrap img {
-  will-change: transform;
 }
 
+/* ─── Left Image Box ────────────────────────────────────────── */
+.leftBox {
+  width: 100%;
+  height: calc(50dvh - 8px);   /* ~half the right image height, bottom-aligned */
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    0% 100%, 100% 100%,
+    100% calc(100% - var(--height)),
+    0%  calc(100% - var(--height))
+  );
+}
+
+/* ─── Right Column ──────────────────────────────────────────── */
 .right {
-  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  /* no top padding — image starts from very top of viewport */
+}
+
+/* ─── Right Image Box ───────────────────────────────────────── */
+.rightBox {
+  flex: 1;                      /* fills full right column height */
   position: relative;
   overflow: hidden;
-  margin-top: 0;
+  clip-path: polygon(
+    0% 100%, 100% 100%,
+    100% calc(100% - var(--height)),
+    0%  calc(100% - var(--height))
+  );
 }
-.right img {
+
+/* ─── Slides ────────────────────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.15);
+  transform-origin: center center;
   will-change: transform;
 }
 
+.slideHidden {
+  opacity: 0;
+}
+
+/* ─── CTA Pills ─────────────────────────────────────────────── */
 .btnPill {
   position: absolute;
   bottom: 20px;
   left: 20px;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -87,9 +145,7 @@
   font-size: var(--text-btn);
   font-weight: 400;
   cursor: pointer;
-  border: none;
-  transition: background var(--dur-fast) var(--ease-std),
-              transform var(--dur-fast) var(--ease-std);
+  transition: background var(--dur-fast) var(--ease-std);
 }
 .btnPill:hover { background: #fff; }
 .arrow {
@@ -103,46 +159,26 @@
   font-size: 11px;
 }
 
-@media (max-width: 960px) {
-  .hero { max-height: none; }
-  .left, .right { grid-column: 1 / -1; }
-  .right { height: 55vw; margin-top: 0; }
+/* ─── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .headline  { transform: none !important; }
+  .leftBox,
+  .rightBox  { clip-path: none !important; }
+  .slide img { transform: none !important; }
 }
+
+/* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Card layout: image full-bleed first, text below */
   .hero {
-    grid-template-columns: 1fr !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0;
-    padding-bottom: 0;
+    grid-template-columns: 1fr;
     min-height: auto;
-    max-height: none;
-    row-gap: 0;
-    column-gap: 0;
+    padding: 0;
+    gap: 0;
   }
-  /* Image panel: row 1, full bleed */
-  .right {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    margin-top: 0;
-  }
-  /* Text panel: row 2, padded */
-  .left {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    padding: 24px 20px 36px;
-    gap: 16px;
-  }
-  .tagline {
-    font-size: 20px;
-    max-width: 100%;
-    margin-top: 0;
-    line-height: 1.45;
-  }
-  .meta { display: none; }
-  .imageWrap { display: none; }
+  .right   { order: -1; height: 70vw; }
+  .rightBox { clip-path: none !important; }
+  .left    { padding: 24px 20px 32px; }
+  .headlineClip { margin-top: 16px; margin-bottom: 24px; }
+  .headline { font-size: 20px; }
+  .leftBox  { height: 50vw; margin-top: 24px; }
 }

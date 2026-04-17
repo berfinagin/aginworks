@@ -1,8 +1,12 @@
-.section {
+.wrapper {
+  background-color: #686563;
+  color: var(--color-off-white);
   margin-top: 180px;
+}
+
+.section {
   padding-top: 80px;
   padding-bottom: 80px;
-  border-top: 1px solid var(--color-border);
 }
 .heading {
   grid-column: span 6;
@@ -38,7 +42,13 @@
   line-height: 1.6;
 }
 
+/* Override section-label dot color for dark background */
+.wrapper :global(.section-label)::before {
+  background: var(--color-off-white);
+}
+
 @media (max-width: 640px) {
-  .section { margin-top: 64px; padding-top: 48px; padding-bottom: 48px; }
+  .wrapper { margin-top: 64px; }
+  .section { padding-top: 48px; padding-bottom: 48px; }
   .heading, .details { grid-column: 1 / -1; }
 }
