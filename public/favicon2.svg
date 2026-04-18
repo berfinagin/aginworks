@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 3 81 81">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.32 61.1">
   <defs>
     <style>
       .cls-1 {
-        font-family: PPNeueMontreal-Bold, 'PP Neue Montreal';
-        font-size: 85.44px;
-        font-weight: 700;
-        letter-spacing: -.04em;
-      }
-
-      .cls-1, .cls-2 {
         isolation: isolate;
       }
 
-      .cls-1, .cls-3 {
+      .cls-2 {
         fill: #151515;
       }
     </style>
   </defs>
-  <g class="cls-2">
-    <text class="cls-1" transform="translate(0 73.27)"><tspan x="0" y="0">W</tspan></text>
+  <g class="cls-1">
+    <g class="cls-1">
+      <path class="cls-2" d="M15.55,61.1L0,0h15.38l7.86,41.44h.17L32.9,0h14.53l9.49,41.44h.17L64.94,0h15.38l-15.55,61.1h-15.38l-9.14-38.11h-.17l-9.14,38.11h-15.38Z"/>
+    </g>
   </g>
-  <rect class="cls-3" x="28.65" y="48.87" width="23.7" height="11.83"/>
+  <rect class="cls-2" x="27.96" y="36.7" width="23.7" height="11.83"/>
 </svg>
