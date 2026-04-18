@@ -28,6 +28,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
       <div className={styles.inner}>
         <NavLink to="/" className={styles.logo}>
+          <img src="/favicon2.svg" alt="" className={styles.logoImg} />
           AGIN WORKS
         </NavLink>
         <nav>

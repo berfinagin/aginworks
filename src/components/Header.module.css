@@ -21,11 +21,20 @@
   pointer-events: auto;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   font-family: var(--font-mono);
   font-size: var(--text-body);
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.logoImg {
+  height: 32px;
+  width: 32px;
+  display: block;
 }
 
 .nav {

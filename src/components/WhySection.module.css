@@ -52,7 +52,7 @@
   font-size: var(--text-body);
   font-weight: 400;
   line-height: 150%;
-  color: var(--color-black-60);
+  color: var(--color-black);
   max-width: 41.67%; /* ≈ 5/12 columns */
   will-change: transform, opacity;
 }

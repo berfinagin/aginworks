@@ -19,7 +19,6 @@
 .text p {
   font-size: var(--text-body);
   line-height: 1.8;
-  opacity: 0.65;
   margin-top: 24px;
   max-width: 400px;
 }

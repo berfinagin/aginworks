@@ -75,7 +75,7 @@
   width: 250px;
   font-size: var(--text-body);
   line-height: 1.5;
-  color: var(--color-black-60);
+  color: var(--color-black);
   will-change: transform;
 }
 
